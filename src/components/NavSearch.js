@@ -1,4 +1,3 @@
-/* global document */
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { SONGS_PATH } from '../constants/RouterConstants'

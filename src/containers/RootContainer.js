@@ -17,7 +17,7 @@ import {
     USER_PATH
 } from '../constants/RouterConstants'
 
-const Root = (props) => <App {...props} />
+const RootContainer = (props) => <App {...props} />
 
 const mapStateToProps = (state) => {
     const { router } = state
@@ -42,4 +42,4 @@ export default connect(
         initEnvironment,
         initRouter
     }
-)(Root)
+)(RootContainer)

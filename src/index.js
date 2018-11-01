@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker'
 
 import './stylesheets/main.scss'
 
-import Root from './containers/Root'
+import RootContainer from './containers/RootContainer'
 import reducerSet from './reducerSet'
 
 const store = window.__REDUX_DEVTOOLS_EXTENSION__
@@ -22,7 +22,7 @@ const store = window.__REDUX_DEVTOOLS_EXTENSION__
 
 render(
     <Provider store={store}>
-        <Root />
+        <RootContainer />
     </Provider>,
     document.getElementById('root')
 )

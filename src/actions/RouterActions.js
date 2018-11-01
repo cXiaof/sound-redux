@@ -1,6 +1,6 @@
 import { compileHash, parseRoute } from '../utils/RouterUtils'
 
-const { history, location } = global
+const { history, location } = window
 
 const pushState = (route) => {
     const hash = compileHash(route)

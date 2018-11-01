@@ -1,5 +1,3 @@
-/* global window */
-
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Loader from '../components/Loader'

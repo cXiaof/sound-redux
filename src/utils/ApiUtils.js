@@ -1,5 +1,3 @@
-/* global fetch */
-/* global window */
 import camelize from 'camelize'
 import SC from 'soundcloud'
 

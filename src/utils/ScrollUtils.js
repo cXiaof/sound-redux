@@ -1,5 +1,3 @@
-/* global window */
-
 const totalHeightofRows = (rowCount, rowHeight, marginBetweenRows) =>
     rowHeight * rowCount + marginBetweenRows * (rowCount - 1)
 

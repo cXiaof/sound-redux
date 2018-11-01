@@ -1,4 +1,3 @@
-/* global window */
 import React, { Component } from 'react'
 
 const stickyOnScroll = (InnerComponent, scrollThreshold) => {
