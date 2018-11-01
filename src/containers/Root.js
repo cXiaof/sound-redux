@@ -9,7 +9,13 @@ import SongContainer from '../containers/SongContainer'
 import SongsContainer from '../containers/SongsContainer'
 import UserContainer from '../containers/UserContainer'
 
-import { INDEX_PATH, PLAYLIST_PATH, SONG_PATH, SONGS_PATH, USER_PATH } from '../constants/RouterConstants'
+import {
+    INDEX_PATH,
+    PLAYLIST_PATH,
+    SONG_PATH,
+    SONGS_PATH,
+    USER_PATH
+} from '../constants/RouterConstants'
 
 const Root = (props) => <App {...props} />
 

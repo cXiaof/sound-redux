@@ -57,7 +57,11 @@ const SongListItem = ({
                 </div>
             </div>
             <div className="song-list__item__main">
-                <Link className="song-list__item__title" navigateTo={navigateTo} keys={{ id }} path={SONG_PATH}>
+                <Link
+                    className="song-list__item__title"
+                    navigateTo={navigateTo}
+                    keys={{ id }}
+                    path={SONG_PATH}>
                     {title}
                 </Link>
                 <div className="song-list__item__meta">

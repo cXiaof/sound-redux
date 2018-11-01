@@ -28,7 +28,11 @@ const UserMain = ({ isFollowing, profiles, toggleFollow, user }) => {
                 <div className="user-main__title">
                     <div className="user-main__username">{username}</div>
                     <div className="user-main__button">
-                        <UserFollowButton id={user.id} isFollowing={isFollowing} toggleFollow={toggleFollow} />
+                        <UserFollowButton
+                            id={user.id}
+                            isFollowing={isFollowing}
+                            toggleFollow={toggleFollow}
+                        />
                     </div>
                 </div>
                 <div className="user-main__location">
@@ -37,7 +41,9 @@ const UserMain = ({ isFollowing, profiles, toggleFollow, user }) => {
                 </div>
                 <div className="user-main__meta">
                     <div className="user-main__followings">
-                        <div className="user-main__followings__count">{addCommas(followersCount)}</div>
+                        <div className="user-main__followings__count">
+                            {addCommas(followersCount)}
+                        </div>
                         <div className="user-main__followings__text">Followers</div>
                     </div>
                     {profiles.map(({ id, service, title, url }) => (
@@ -53,7 +59,10 @@ const UserMain = ({ isFollowing, profiles, toggleFollow, user }) => {
                         </div>
                     ))}
                 </div>
-                <div className="user-main__description" dangerouslySetInnerHTML={{ __html: description }} />
+                <div
+                    className="user-main__description"
+                    dangerouslySetInnerHTML={{ __html: description }}
+                />
             </div>
         </div>
     )

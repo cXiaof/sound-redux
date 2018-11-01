@@ -48,7 +48,10 @@ const Player = ({
             <div className="player__inner container">
                 <div className="player__section player__section--song">
                     <div className="player__song">
-                        <div className="player__song__artwork" style={{ backgroundImage: `url(${artworkUrl})` }} />
+                        <div
+                            className="player__song__artwork"
+                            style={{ backgroundImage: `url(${artworkUrl})` }}
+                        />
                         <div className="player__song__main">
                             <Link
                                 className="player__song__title"
@@ -69,13 +72,29 @@ const Player = ({
                 </div>
                 <div className="player__section">
                     <div className="player__buttons">
-                        <div className="player__button" onClick={playPrevSong} role="button" tabIndex="0">
+                        <div
+                            className="player__button"
+                            onClick={playPrevSong}
+                            role="button"
+                            tabIndex="0">
                             <i className="player__button__icon ion-ios-rewind" />
                         </div>
-                        <div className="player__button" onClick={togglePlay} role="button" tabIndex="0">
-                            <i className={`player__button__icon ion-ios-${isPlaying ? 'pause' : 'play'}`} />
+                        <div
+                            className="player__button"
+                            onClick={togglePlay}
+                            role="button"
+                            tabIndex="0">
+                            <i
+                                className={`player__button__icon ion-ios-${
+                                    isPlaying ? 'pause' : 'play'
+                                }`}
+                            />
                         </div>
-                        <div className="player__button" onClick={playNextSongFromButton} role="button" tabIndex="0">
+                        <div
+                            className="player__button"
+                            onClick={playNextSongFromButton}
+                            role="button"
+                            tabIndex="0">
                             <i className="player__button__icon ion-ios-fastforward" />
                         </div>
                     </div>
@@ -107,7 +126,9 @@ const Player = ({
                             <i className="player__button__icon ion-shuffle" />
                         </div>
                         <div
-                            className={`player__button ${showHistory ? 'player__button--active' : ''}`}
+                            className={`player__button ${
+                                showHistory ? 'player__button--active' : ''
+                            }`}
                             onClick={toggleShowHistory}
                             role="button"
                             tabIndex="0">
@@ -118,7 +139,11 @@ const Player = ({
                             onClick={toggleMuted}
                             role="button"
                             tabIndex="0">
-                            <i className={`player__button__icon ion-android-volume-${muted ? 'off' : 'mute'}`} />
+                            <i
+                                className={`player__button__icon ion-android-volume-${
+                                    muted ? 'off' : 'mute'
+                                }`}
+                            />
                             <i
                                 className={`player__button__icon player__button__icon--absolute ${volumeClassName(
                                     volume

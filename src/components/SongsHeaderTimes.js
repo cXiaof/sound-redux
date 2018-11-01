@@ -17,7 +17,9 @@ const SongsHeaderTimes = ({ genre, navigateTo, search, time, times }) => (
             <i className="songs-header__times__icon ion-funnel" />
             {times.map((t) => (
                 <Link
-                    className={`songs-header__time ${t.key === time ? 'songs-header__time--active' : ''}`}
+                    className={`songs-header__time ${
+                        t.key === time ? 'songs-header__time--active' : ''
+                    }`}
                     key={t.key}
                     navigateTo={navigateTo}
                     options={{

@@ -5,7 +5,13 @@ import { playSong } from '../actions/PlayerActions'
 import { navigateTo } from '../actions/RouterActions'
 import { login, toggleFollow, toggleLike } from '../actions/SessionActions'
 import fetchUserIfNeeded from '../actions/UserActions'
-import { getId, getIsAuthenticated, getLikes, getPlayingSongId, getSidebarHeight } from '../selectors/CommonSelectors'
+import {
+    getId,
+    getIsAuthenticated,
+    getLikes,
+    getPlayingSongId,
+    getSidebarHeight
+} from '../selectors/CommonSelectors'
 import {
     getFollowings,
     getIsFollowing,

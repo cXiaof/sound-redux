@@ -37,7 +37,12 @@ const SongsHeader = ({
             <div className="songs-header__inner">
                 <div className="songs-header__sections container">
                     <div className="songs-header__section songs-header__section--genres">
-                        <SongsHeaderGenres genre={genre} genres={genres} navigateTo={navigateTo} time={time} />
+                        <SongsHeaderGenres
+                            genre={genre}
+                            genres={genres}
+                            navigateTo={navigateTo}
+                            time={time}
+                        />
                     </div>
                     <div className="songs-header__section songs-header__section--time">
                         <SongsHeaderTimes

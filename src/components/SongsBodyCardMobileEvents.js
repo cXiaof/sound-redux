@@ -30,7 +30,14 @@ class SongsBodyCardMobileEvents extends Component {
     }
 
     render() {
-        return <div className="songs-body-card__mobile-events" onClick={this.onClick} role="button" tabIndex="0" />
+        return (
+            <div
+                className="songs-body-card__mobile-events"
+                onClick={this.onClick}
+                role="button"
+                tabIndex="0"
+            />
+        )
     }
 }
 

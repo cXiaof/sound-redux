@@ -28,4 +28,8 @@ export const GENRE_QUERY_MAP = GENRES.reduce(
     {}
 )
 
-export const TIMES = [{ key: '7', label: '7 days' }, { key: '30', label: '30 days' }, { key: '90', label: '90 days' }]
+export const TIMES = [
+    { key: '7', label: '7 days' },
+    { key: '30', label: '30 days' },
+    { key: '90', label: '90 days' }
+]

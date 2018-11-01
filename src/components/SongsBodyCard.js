@@ -90,7 +90,12 @@ const SongsBodyCard = ({
                     toggleLike={toggleLike}
                 />
             </div>
-            <SongsBodyCardMobileEvents index={index} isActive={isActive} playlist={playlist} playSong={playSong} />
+            <SongsBodyCardMobileEvents
+                index={index}
+                isActive={isActive}
+                playlist={playlist}
+                playSong={playSong}
+            />
         </div>
     )
 }

@@ -25,7 +25,11 @@ class Switch extends Component {
     render() {
         const { on } = this.props
         return (
-            <div className={`switch ${on ? 'switch--on' : ''}`} onClick={this.onClick} role="button" tabIndex="0">
+            <div
+                className={`switch ${on ? 'switch--on' : ''}`}
+                onClick={this.onClick}
+                role="button"
+                tabIndex="0">
                 <div className="switch__button" />
             </div>
         )

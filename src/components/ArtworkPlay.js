@@ -41,7 +41,11 @@ class ArtworkPlay extends Component {
                 role="button"
                 tabIndex="0"
                 onClick={isActive ? this.togglePlay : this.playSong}>
-                <i className={`artwork-play__icon ion-${isActive && isPlaying ? 'radio-waves' : 'ios-play'}`} />
+                <i
+                    className={`artwork-play__icon ion-${
+                        isActive && isPlaying ? 'radio-waves' : 'ios-play'
+                    }`}
+                />
             </div>
         )
     }

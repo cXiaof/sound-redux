@@ -1,4 +1,4 @@
-fork by [SoundRedux](https://github.com/andrewngu/sound-redux)
+fork from [SoundRedux](https://github.com/andrewngu/sound-redux)
 
 restructure by create-react-app
 

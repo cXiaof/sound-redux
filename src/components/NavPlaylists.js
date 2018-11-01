@@ -17,7 +17,9 @@ const propTypes = {
 const NavPlaylists = ({ navigateTo, navPlaylist, navPlaylists, showPlaylist }) => (
     <Popover className="nav-playlists">
         <div className={`nav-session__item ${showPlaylist ? 'nav-session__item--active' : ''}`}>
-            <div className="nav-session__item__text">{navPlaylist ? navPlaylist.title : 'Playlists'}</div>
+            <div className="nav-session__item__text">
+                {navPlaylist ? navPlaylist.title : 'Playlists'}
+            </div>
             <i className="nav-session__item__icon ion-ios-arrow-down" />
         </div>
         <div className="nav-playlists__panel">

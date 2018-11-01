@@ -28,14 +28,23 @@ class SongsHeaderGenres extends Component {
         const { genre, genres, navigateTo, time } = this.props
 
         return (
-            <div className={`songs-header__genres ${expanded ? 'songs-header__genres--expanded' : ''}`}>
-                <div className="songs-header__genres__active" onClick={this.onClick} role="button" tabIndex="0">
+            <div
+                className={`songs-header__genres ${
+                    expanded ? 'songs-header__genres--expanded' : ''
+                }`}>
+                <div
+                    className="songs-header__genres__active"
+                    onClick={this.onClick}
+                    role="button"
+                    tabIndex="0">
                     {genre || 'genre'}
                 </div>
                 <div className="songs-header__genres__main">
                     {genres.map((g) => (
                         <div
-                            className={`songs-header__genre ${g.key === genre ? 'songs-header__genre--active' : ''}`}
+                            className={`songs-header__genre ${
+                                g.key === genre ? 'songs-header__genre--active' : ''
+                            }`}
                             key={g.key}>
                             <Link
                                 className="songs-header__genre__text"

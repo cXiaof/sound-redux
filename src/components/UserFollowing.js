@@ -16,9 +16,16 @@ const UserFollowing = ({ following, navigateTo }) => {
 
     return (
         <div className="user-following">
-            <div className="user-following__avatar" style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }} />
+            <div
+                className="user-following__avatar"
+                style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
+            />
             <div className="user-following__main">
-                <Link className="user-following__username" keys={{ id }} navigateTo={navigateTo} path={USER_PATH}>
+                <Link
+                    className="user-following__username"
+                    keys={{ id }}
+                    navigateTo={navigateTo}
+                    path={USER_PATH}>
                     {username}
                 </Link>
                 <div className="user-following__location">

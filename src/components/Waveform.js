@@ -58,7 +58,10 @@ class Waveform extends Component {
 
         return (
             <div className={`waveform ${isActive ? 'waveform--active' : ''} ${className}`}>
-                <div className="waveform__image" style={{ backgroundImage: `url(${waveformUrl})` }} />
+                <div
+                    className="waveform__image"
+                    style={{ backgroundImage: `url(${waveformUrl})` }}
+                />
                 <div className="waveform__bg" style={{ width: `${width}%` }} />
                 <div className="waveform__seek-bg" style={{ width: `${seek}%` }} />
                 <div className="waveform__hover-icon">

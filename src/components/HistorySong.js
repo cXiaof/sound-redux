@@ -23,7 +23,9 @@ class HistorySong extends Component {
 
         return (
             <div className="history__song" onClick={this.onClick} role="button" tabIndex="0">
-                <div className="history__song__artwork" style={{ backgroundImage: `url(${getImageUrl(artworkUrl)})` }}>
+                <div
+                    className="history__song__artwork"
+                    style={{ backgroundImage: `url(${getImageUrl(artworkUrl)})` }}>
                     <ArtworkPlay
                         index={index}
                         isActive={isActive}
@@ -33,7 +35,11 @@ class HistorySong extends Component {
                     />
                 </div>
                 <div className="history__song__main">
-                    <Link className="history__song__title" keys={{ id }} navigateTo={navigateTo} path={SONG_PATH}>
+                    <Link
+                        className="history__song__title"
+                        keys={{ id }}
+                        navigateTo={navigateTo}
+                        path={SONG_PATH}>
                         {title}
                     </Link>
                     <Link

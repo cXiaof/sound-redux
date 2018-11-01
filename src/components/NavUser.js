@@ -22,7 +22,10 @@ const NavUser = ({ isAuthenticated, login, logout, user }) => {
         return (
             <Popover className="nav-user popover--right">
                 <div className="nav-user__trigger">
-                    <div className="nav-user__avatar" style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }} />
+                    <div
+                        className="nav-user__avatar"
+                        style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
+                    />
                     <i className="nav-user__chevron ion-chevron-down" />
                 </div>
                 <SessionPopoverPanel logout={logout} />

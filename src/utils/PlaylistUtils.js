@@ -11,7 +11,8 @@ import {
 } from '../constants/PlaylistConstants'
 import { songSchema } from '../constants/Schemas'
 
-const isFetching = (playlist, playlists) => (playlist in playlists ? playlists[playlist].isFetching : false)
+const isFetching = (playlist, playlists) =>
+    playlist in playlists ? playlists[playlist].isFetching : false
 
 const genrePlaylistUrl = (genre, time) => {
     const genreUriSegment = `&tags=${GENRE_QUERY_MAP[genre] || genre}`

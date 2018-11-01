@@ -37,7 +37,11 @@ const History = ({
             <div className="history__main">
                 <div className="history__header">
                     <div className="history__header__title">Recently Played</div>
-                    <div className="history__header__button" onClick={toggleShowHistory} role="button" tabIndex="0">
+                    <div
+                        className="history__header__button"
+                        onClick={toggleShowHistory}
+                        role="button"
+                        tabIndex="0">
                         <i className="history__header__button__icon ion-android-close" />
                     </div>
                 </div>

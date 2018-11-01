@@ -15,7 +15,9 @@ const propTypes = {
 }
 
 const SongComments = ({ comments, id, navigateTo, sidebarHeight, sticky, timed }) => (
-    <div className={`sidebar ${sticky ? 'sidebar--sticky' : ''}`} style={{ height: `${sidebarHeight}px` }}>
+    <div
+        className={`sidebar ${sticky ? 'sidebar--sticky' : ''}`}
+        style={{ height: `${sidebarHeight}px` }}>
         <div className="sidebar__header">
             <div className="sidebar__header__left">Comments</div>
             <div className="sidebar__header__right">

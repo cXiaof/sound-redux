@@ -30,10 +30,16 @@ class Popover extends Component {
 
         return (
             <div className={`popover ${className}`}>
-                <span className="popover__trigger" onClick={this.toggleIsOpen} role="button" tabIndex="0">
+                <span
+                    className="popover__trigger"
+                    onClick={this.toggleIsOpen}
+                    role="button"
+                    tabIndex="0">
                     {children[0]}
                 </span>
-                {isOpen ? <PopoverPanel toggleIsOpen={this.toggleIsOpen}>{children[1]}</PopoverPanel> : null}
+                {isOpen ? (
+                    <PopoverPanel toggleIsOpen={this.toggleIsOpen}>{children[1]}</PopoverPanel>
+                ) : null}
             </div>
         )
     }

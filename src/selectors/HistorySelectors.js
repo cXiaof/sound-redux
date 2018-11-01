@@ -8,7 +8,9 @@ export const getSongs = createSelector(
     getPlaylists,
     getEntities,
     (playlists, entities) =>
-        HISTORY_PLAYLIST in playlists ? denormalize(playlists[HISTORY_PLAYLIST].items, [songSchema], entities) : []
+        HISTORY_PLAYLIST in playlists
+            ? denormalize(playlists[HISTORY_PLAYLIST].items, [songSchema], entities)
+            : []
 )
 
 export const getShowHistory = (state) => state.history.showHistory

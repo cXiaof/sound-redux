@@ -5,7 +5,16 @@ export const CHANGE_TYPES = {
     SHUFFLE: 'shuffle'
 }
 
-export const GENRES = ['chill', 'deep', 'dubstep', 'house', 'progressive', 'tech', 'trance', 'tropical']
+export const GENRES = [
+    'chill',
+    'deep',
+    'dubstep',
+    'house',
+    'progressive',
+    'tech',
+    'trance',
+    'tropical'
+]
 
 export const GENRES_MAP = GENRES.reduce(
     (obj, genre) =>

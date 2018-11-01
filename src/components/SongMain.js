@@ -34,7 +34,15 @@ const SongMain = ({
     toggleLike
 }) => {
     const { isPlaying } = player
-    const { artworkUrl, commentCount, description, favoritingsCount, id, playbackCount, user } = song
+    const {
+        artworkUrl,
+        commentCount,
+        description,
+        favoritingsCount,
+        id,
+        playbackCount,
+        user
+    } = song
     const { avatarUrl, username } = user
 
     return (

@@ -41,7 +41,8 @@ export const fetchSongsIfNeeded = (playlist, playlistUrl) => (dispatch, getState
     const playlistExists = playlist in playlists
     const playlistIsFetching = playlistExists ? playlists[playlist].isFetching : false
     const playlistHasItems = playlistExists ? Boolean(playlists[playlist].items.length) : false
-    const shouldFetchSongs = playlistUrl && (!playlistExists || (!playlistHasItems && !playlistIsFetching))
+    const shouldFetchSongs =
+        playlistUrl && (!playlistExists || (!playlistHasItems && !playlistIsFetching))
 
     if (shouldFetchSongs) {
         dispatch(fetchSongs(playlist, playlistUrl))

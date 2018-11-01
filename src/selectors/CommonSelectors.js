@@ -35,8 +35,10 @@ export const getRepeat = (state) => state.player.repeat
 export const getShuffle = (state) => state.player.shuffle
 
 // router selectors
-export const getGenre = (state) => (state.router.route.options.q ? '' : state.router.route.options.g || 'house')
-export const getId = (state) => (state.router.route.keys.id ? Number(state.router.route.keys.id) : 0)
+export const getGenre = (state) =>
+    state.router.route.options.q ? '' : state.router.route.options.g || 'house'
+export const getId = (state) =>
+    state.router.route.keys.id ? Number(state.router.route.keys.id) : 0
 export const getPath = (state) => state.router.route.path
 export const getSearch = (state) => state.router.route.options.q || ''
 export const getSession = (state) => {
@@ -70,7 +72,9 @@ export const getSessionUser = createSelector(
     getEntities,
     (id, entities) => (id in entities.users ? entities.users[id] : null)
 )
-export const getIsAuthenticated = createSelector(getOauthToken, getSessionUser, (oauthToken, user) =>
-    Boolean(oauthToken && user)
+export const getIsAuthenticated = createSelector(
+    getOauthToken,
+    getSessionUser,
+    (oauthToken, user) => Boolean(oauthToken && user)
 )
 export const getSessionFollowings = (state) => state.session.followings

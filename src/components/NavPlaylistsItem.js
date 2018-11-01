@@ -13,7 +13,12 @@ const NavPlaylistsItem = ({ navigateTo, playlist }) => {
     const { id, title, tracks } = playlist
 
     return (
-        <Link className="nav-playlists__item" key={id} keys={{ id }} navigateTo={navigateTo} path={PLAYLIST_PATH}>
+        <Link
+            className="nav-playlists__item"
+            key={id}
+            keys={{ id }}
+            navigateTo={navigateTo}
+            path={PLAYLIST_PATH}>
             <div className="nav-playlists__item__main">
                 <div className="nav-playlists__item__title">{title}</div>
                 <div className="nav-playlists__item__meta">

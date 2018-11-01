@@ -1,6 +1,10 @@
 import Cookies from 'js-cookie'
 import { normalize } from 'normalizr'
-import { fetchSongsRequest, fetchSongsIfNeeded, fetchSongsSuccess } from '../actions/PlaylistActions'
+import {
+    fetchSongsRequest,
+    fetchSongsIfNeeded,
+    fetchSongsSuccess
+} from '../actions/PlaylistActions'
 import { navigateTo } from '../actions/RouterActions'
 import {
     CLIENT_ID,
@@ -12,7 +16,11 @@ import {
     TOGGLE_FOLLOW_URL,
     TOGGLE_LIKE_URL
 } from '../constants/ApiConstants'
-import { PLAYLIST_PLAYLIST_TYPE, SESSION_LIKES_PLAYLIST, SESSION_STREAM_PLAYLIST } from '../constants/PlaylistConstants'
+import {
+    PLAYLIST_PLAYLIST_TYPE,
+    SESSION_LIKES_PLAYLIST,
+    SESSION_STREAM_PLAYLIST
+} from '../constants/PlaylistConstants'
 import { INITIAL_ROUTE } from '../constants/RouterConstants'
 import { playlistSchema, songSchema, userSchema } from '../constants/Schemas'
 import { getOauthToken } from '../selectors/CommonSelectors'
@@ -30,13 +38,16 @@ const fetchNewStreamSongsSuccess = (songs, entities, futureUrl) => ({
 export const fetchNewStreamSongs = (url) => async (dispatch, getState) => {
     const { json } = await callApi(url)
     const { playlists } = getState()
-    const items = SESSION_STREAM_PLAYLIST in playlists ? playlists[SESSION_STREAM_PLAYLIST].items : []
+    const items =
+        SESSION_STREAM_PLAYLIST in playlists ? playlists[SESSION_STREAM_PLAYLIST].items : []
     const itemsMap = items.reduce((obj, id) => ({ ...obj, [id]: 1 }), {})
 
     const { collection, futureHref } = json
 
     const futureUrl = futureHref || null
-    const songs = collection.filter((song) => song.kind === 'track' && song.streamable && !(song.id in itemsMap))
+    const songs = collection.filter(
+        (song) => song.kind === 'track' && song.streamable && !(song.id in itemsMap)
+    )
 
     const { result, entities } = normalize(songs, [songSchema])
 
@@ -120,7 +131,12 @@ const fetchSessionData = (oauthToken) => (dispatch) => {
     dispatch(fetchSessionFollowings(oauthToken))
     dispatch(fetchSessionLikes(oauthToken))
     dispatch(fetchSessionPlaylists(oauthToken))
-    dispatch(fetchSongsIfNeeded(SESSION_STREAM_PLAYLIST, `${SESSION_STREAM_URL}&oauth_token=${oauthToken}`))
+    dispatch(
+        fetchSongsIfNeeded(
+            SESSION_STREAM_PLAYLIST,
+            `${SESSION_STREAM_URL}&oauth_token=${oauthToken}`
+        )
+    )
 }
 
 export const loadNewStreamSongs = (newStreamSongs) => ({
@@ -172,9 +188,12 @@ export const toggleFollow = (id, following) => async (dispatch, getState) => {
     dispatch(toggleFollowRequest(id, following))
 
     const oauthToken = getOauthToken(getState())
-    const { error } = await callApi(`${TOGGLE_FOLLOW_URL.replace(':id', id)}?oauth_token=${oauthToken}`, {
-        method: following ? 'PUT' : 'DELETE'
-    })
+    const { error } = await callApi(
+        `${TOGGLE_FOLLOW_URL.replace(':id', id)}?oauth_token=${oauthToken}`,
+        {
+            method: following ? 'PUT' : 'DELETE'
+        }
+    )
 
     if (error) {
         dispatch(toggleFollowError(id, !following))
@@ -203,9 +222,12 @@ export const toggleLike = (id, liked) => async (dispatch, getState) => {
     dispatch(toggleLikeRequest(id, liked))
 
     const oauthToken = getOauthToken(getState())
-    const { error } = await callApi(`${TOGGLE_LIKE_URL.replace(':id', id)}?oauth_token=${oauthToken}`, {
-        method: liked ? 'PUT' : 'DELETE'
-    })
+    const { error } = await callApi(
+        `${TOGGLE_LIKE_URL.replace(':id', id)}?oauth_token=${oauthToken}`,
+        {
+            method: liked ? 'PUT' : 'DELETE'
+        }
+    )
 
     if (error) {
         return dispatch(toggleLikeError(id, !liked))
