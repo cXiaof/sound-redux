@@ -31,10 +31,10 @@ class SongsBodyCardMobileEvents extends Component {
     render() {
         return (
             <div
-                className="songs-body-card__mobile-events"
+                className='songs-body-card__mobile-events'
                 onClick={this.onClick}
-                role="button"
-                tabIndex="0"
+                role='button'
+                tabIndex='0'
             />
         )
     }

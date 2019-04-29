@@ -115,7 +115,7 @@ const audio = (InnerComponent) => {
             return (
                 <div>
                     <audio
-                        id="audio"
+                        id='audio'
                         onEnded={this.onEnded}
                         onLoadedMetadata={this.onLoadedMetadata}
                         onLoadStart={this.onLoadStart}

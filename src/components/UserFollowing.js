@@ -15,27 +15,28 @@ const UserFollowing = ({ following, navigateTo }) => {
     const { avatarUrl, followersCount, id, username } = following
 
     return (
-        <div className="user-following">
+        <div className='user-following'>
             <div
-                className="user-following__avatar"
+                className='user-following__avatar'
                 style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
             />
-            <div className="user-following__main">
+            <div className='user-following__main'>
                 <Link
-                    className="user-following__username"
+                    className='user-following__username'
                     keys={{ id }}
                     navigateTo={navigateTo}
-                    path={USER_PATH}>
+                    path={USER_PATH}
+                >
                     {username}
                 </Link>
-                <div className="user-following__location">
-                    <i className="user-following__location__icon ion-location" />
-                    <div className="user-following__location__text">{getLocation(following)}</div>
+                <div className='user-following__location'>
+                    <i className='user-following__location__icon ion-location' />
+                    <div className='user-following__location__text'>{getLocation(following)}</div>
                 </div>
             </div>
-            <div className="user-following__followers">
-                <div className="user-following__followers__count">{addCommas(followersCount)}</div>
-                <div className="user-following__followers__text">Followers</div>
+            <div className='user-following__followers'>
+                <div className='user-following__followers__count'>{addCommas(followersCount)}</div>
+                <div className='user-following__followers__text'>Followers</div>
             </div>
         </div>
     )

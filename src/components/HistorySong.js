@@ -22,10 +22,11 @@ class HistorySong extends Component {
         const { username } = user
 
         return (
-            <div className="history__song" onClick={this.onClick} role="button" tabIndex="0">
+            <div className='history__song' onClick={this.onClick} role='button' tabIndex='0'>
                 <div
-                    className="history__song__artwork"
-                    style={{ backgroundImage: `url(${getImageUrl(artworkUrl)})` }}>
+                    className='history__song__artwork'
+                    style={{ backgroundImage: `url(${getImageUrl(artworkUrl)})` }}
+                >
                     <ArtworkPlay
                         index={index}
                         isActive={isActive}
@@ -34,19 +35,21 @@ class HistorySong extends Component {
                         playSong={playSong}
                     />
                 </div>
-                <div className="history__song__main">
+                <div className='history__song__main'>
                     <Link
-                        className="history__song__title"
+                        className='history__song__title'
                         keys={{ id }}
                         navigateTo={navigateTo}
-                        path={SONG_PATH}>
+                        path={SONG_PATH}
+                    >
                         {title}
                     </Link>
                     <Link
-                        className="history__song__username"
+                        className='history__song__username'
                         keys={{ id: user.id }}
                         navigateTo={navigateTo}
-                        path={USER_PATH}>
+                        path={USER_PATH}
+                    >
                         {username}
                     </Link>
                 </div>

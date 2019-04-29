@@ -70,13 +70,13 @@ class User extends Component {
             user
         } = this.props
         if (shouldFetchUser) {
-            return <Loader className="loader--full" isLoading />
+            return <Loader className='loader--full' isLoading />
         }
 
         return (
-            <div className="container">
-                <div className="user content">
-                    <div className="user__main">
+            <div className='container'>
+                <div className='user content'>
+                    <div className='user__main'>
                         <UserMain
                             isFollowing={isFollowing}
                             profiles={profiles}
@@ -84,7 +84,7 @@ class User extends Component {
                             user={user}
                         />
                         <SongList
-                            className="user__song-list"
+                            className='user__song-list'
                             isAuthenticated={isAuthenticated}
                             likes={likes}
                             login={login}
@@ -97,7 +97,7 @@ class User extends Component {
                             toggleLike={toggleLike}
                         />
                     </div>
-                    <div className="user__sidebar">
+                    <div className='user__sidebar'>
                         <UserFollowings
                             followings={followings}
                             navigateTo={navigateTo}

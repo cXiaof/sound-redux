@@ -32,20 +32,21 @@ const History = ({
     }
 
     return (
-        <div className="history">
-            <div className="history__bg" onClick={toggleShowHistory} role="button" tabIndex="0" />
-            <div className="history__main">
-                <div className="history__header">
-                    <div className="history__header__title">Recently Played</div>
+        <div className='history'>
+            <div className='history__bg' onClick={toggleShowHistory} role='button' tabIndex='0' />
+            <div className='history__main'>
+                <div className='history__header'>
+                    <div className='history__header__title'>Recently Played</div>
                     <div
-                        className="history__header__button"
+                        className='history__header__button'
                         onClick={toggleShowHistory}
-                        role="button"
-                        tabIndex="0">
-                        <i className="history__header__button__icon ion-android-close" />
+                        role='button'
+                        tabIndex='0'
+                    >
+                        <i className='history__header__button__icon ion-android-close' />
                     </div>
                 </div>
-                <div className="history__body">
+                <div className='history__body'>
                     {songs.map((song, i) => (
                         <HistorySong
                             index={i}

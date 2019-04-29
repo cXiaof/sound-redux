@@ -47,12 +47,13 @@ const SongMain = ({
 
     return (
         <div className={`song-main ${isActive ? 'song-main--active' : ''}`}>
-            <div className="song-main__artwork">
+            <div className='song-main__artwork'>
                 <div
-                    className="song-main__artwork__image"
+                    className='song-main__artwork__image'
                     style={{
                         backgroundImage: `url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`
-                    }}>
+                    }}
+                >
                     <ArtworkPlay
                         index={0}
                         isActive={isActive}
@@ -62,23 +63,24 @@ const SongMain = ({
                     />
                 </div>
             </div>
-            <div className="song-main__main">
-                <div className="song-main__title">{song.title}</div>
-                <div className="song-main__user">
+            <div className='song-main__main'>
+                <div className='song-main__title'>{song.title}</div>
+                <div className='song-main__user'>
                     <div
-                        className="song-main__user__avatar"
+                        className='song-main__user__avatar'
                         style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
                     />
                     <Link
-                        className="song-main__user__username"
+                        className='song-main__user__username'
                         navigateTo={navigateTo}
                         keys={{ id: user.id }}
-                        path={USER_PATH}>
+                        path={USER_PATH}
+                    >
                         {username}
                     </Link>
                 </div>
                 <Stats
-                    className="song-main__stats"
+                    className='song-main__stats'
                     commentCount={commentCount}
                     favoritingsCount={favoritingsCount}
                     id={id}
@@ -88,10 +90,10 @@ const SongMain = ({
                     playbackCount={playbackCount}
                     toggleLike={toggleLike}
                 />
-                <div className="song-main__description">{description}</div>
+                <div className='song-main__description'>{description}</div>
             </div>
             <Waveform
-                className="song-main__waveform"
+                className='song-main__waveform'
                 index={0}
                 isActive={isActive}
                 player={player}

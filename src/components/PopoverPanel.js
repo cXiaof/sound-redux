@@ -40,10 +40,11 @@ class PopoverPanel extends Component {
         const { children } = this.props
         return (
             <div
-                className="popover__panel"
+                className='popover__panel'
                 ref={(node) => {
                     this.node = node
-                }}>
+                }}
+            >
                 {children}
             </div>
         )

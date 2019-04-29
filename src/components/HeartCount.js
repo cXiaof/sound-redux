@@ -12,7 +12,7 @@ const propTypes = {
 
 const HeartCount = ({ favoritingsCount }) => {
     if (favoritingsCount) {
-        return <div className="heart__count">{addCommas(favoritingsCount)}</div>
+        return <div className='heart__count'>{addCommas(favoritingsCount)}</div>
     }
 
     return null

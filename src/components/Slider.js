@@ -69,17 +69,18 @@ class Slider extends Component {
                 ref={(node) => {
                     this.domNode = node
                 }}
-                role="button"
-                tabIndex="0">
-                <div className="slider__bar">
+                role='button'
+                tabIndex='0'
+            >
+                <div className='slider__bar'>
                     {max > 0 ? (
-                        <div className="slider__bar__fill" style={{ width }}>
+                        <div className='slider__bar__fill' style={{ width }}>
                             <div
-                                className="slider__handle"
+                                className='slider__handle'
                                 onClick={prevent}
                                 onMouseDown={this.onMouseDown}
-                                role="button"
-                                tabIndex="0"
+                                role='button'
+                                tabIndex='0'
                             />
                         </div>
                     ) : null}

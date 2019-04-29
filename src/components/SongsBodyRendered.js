@@ -47,7 +47,7 @@ const SongsBodyRendered = ({
             const song = index < length ? songs[index] : null
 
             row.push(
-                <div className="row__cell" key={index}>
+                <div className='row__cell' key={index}>
                     {song ? (
                         <SongsBodyCard
                             index={index}
@@ -68,7 +68,7 @@ const SongsBodyRendered = ({
         }
 
         rows.push(
-            <div className="row" key={i}>
+            <div className='row' key={i}>
                 {row}
             </div>
         )

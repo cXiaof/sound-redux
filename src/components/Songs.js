@@ -97,7 +97,7 @@ class Songs extends Component {
                     time={time}
                     times={times}
                 />
-                <div className="container">
+                <div className='container'>
                     <SongsBody
                         height={height}
                         isAuthenticated={isAuthenticated}

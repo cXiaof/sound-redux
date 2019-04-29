@@ -41,12 +41,13 @@ const SongListItem = ({
 
     return (
         <div className={`song-list__item ${isActive ? 'song-list__item--active' : ''}`}>
-            <div className="song-list__item__artwork">
+            <div className='song-list__item__artwork'>
                 <div
-                    className="song-list__item__artwork__image"
+                    className='song-list__item__artwork__image'
                     style={{
                         backgroundImage: `url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`
-                    }}>
+                    }}
+                >
                     <ArtworkPlay
                         index={index}
                         isActive={isActive}
@@ -56,30 +57,32 @@ const SongListItem = ({
                     />
                 </div>
             </div>
-            <div className="song-list__item__main">
+            <div className='song-list__item__main'>
                 <Link
-                    className="song-list__item__title"
+                    className='song-list__item__title'
                     navigateTo={navigateTo}
                     keys={{ id }}
-                    path={SONG_PATH}>
+                    path={SONG_PATH}
+                >
                     {title}
                 </Link>
-                <div className="song-list__item__meta">
-                    <div className="song-list__item__user">
+                <div className='song-list__item__meta'>
+                    <div className='song-list__item__user'>
                         <div
-                            className="song-list__item__user__avatar"
+                            className='song-list__item__user__avatar'
                             style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
                         />
                         <Link
-                            className="song-list__item__user__username"
+                            className='song-list__item__user__username'
                             navigateTo={navigateTo}
                             keys={{ id: user.id }}
-                            path={USER_PATH}>
+                            path={USER_PATH}
+                        >
                             {username}
                         </Link>
                     </div>
                     <Stats
-                        className="song-list__item__stats"
+                        className='song-list__item__stats'
                         commentCount={commentCount}
                         favoritingsCount={favoritingsCount}
                         id={id}
@@ -92,7 +95,7 @@ const SongListItem = ({
                 </div>
             </div>
             <Waveform
-                className="song-list__item__waveform"
+                className='song-list__item__waveform'
                 index={index}
                 isActive={isActive}
                 player={player}

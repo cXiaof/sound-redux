@@ -70,8 +70,8 @@ class SongBody extends Component {
         const { end, paddingBottom, paddingTop, start } = this.state
 
         return (
-            <div className="songs-body">
-                <div className="songs-body__padder" style={{ height: `${paddingTop}px` }} />
+            <div className='songs-body'>
+                <div className='songs-body__padder' style={{ height: `${paddingTop}px` }} />
                 <SongsBodyRendered
                     end={end}
                     isAuthenticated={isAuthenticated}
@@ -87,8 +87,8 @@ class SongBody extends Component {
                     start={start}
                     toggleLike={toggleLike}
                 />
-                <div className="songs-body__padder" style={{ height: `${paddingBottom}px` }} />
-                <Loader className="loader--full" isLoading={isFetching} />
+                <div className='songs-body__padder' style={{ height: `${paddingBottom}px` }} />
+                <Loader className='loader--full' isLoading={isFetching} />
             </div>
         )
     }

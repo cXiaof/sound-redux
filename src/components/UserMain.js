@@ -17,17 +17,17 @@ const UserMain = ({ isFollowing, profiles, toggleFollow, user }) => {
     const { avatarUrl, description, followersCount, username } = user
 
     return (
-        <div className="user-main">
-            <div className="user-main__avatar">
+        <div className='user-main'>
+            <div className='user-main__avatar'>
                 <div
-                    className="user-main__avatar__image"
+                    className='user-main__avatar__image'
                     style={{ backgroundImage: `url(${getImageUrl(avatarUrl, IMAGE_SIZES.LARGE)})` }}
                 />
             </div>
-            <div className="user-main__main">
-                <div className="user-main__title">
-                    <div className="user-main__username">{username}</div>
-                    <div className="user-main__button">
+            <div className='user-main__main'>
+                <div className='user-main__title'>
+                    <div className='user-main__username'>{username}</div>
+                    <div className='user-main__button'>
                         <UserFollowButton
                             id={user.id}
                             isFollowing={isFollowing}
@@ -35,32 +35,33 @@ const UserMain = ({ isFollowing, profiles, toggleFollow, user }) => {
                         />
                     </div>
                 </div>
-                <div className="user-main__location">
-                    <i className="user-main__location__icon ion-location" />
-                    <div className="user-main__location__text">{getLocation(user)}</div>
+                <div className='user-main__location'>
+                    <i className='user-main__location__icon ion-location' />
+                    <div className='user-main__location__text'>{getLocation(user)}</div>
                 </div>
-                <div className="user-main__meta">
-                    <div className="user-main__followings">
-                        <div className="user-main__followings__count">
+                <div className='user-main__meta'>
+                    <div className='user-main__followings'>
+                        <div className='user-main__followings__count'>
                             {addCommas(followersCount)}
                         </div>
-                        <div className="user-main__followings__text">Followers</div>
+                        <div className='user-main__followings__text'>Followers</div>
                     </div>
                     {profiles.map(({ id, service, title, url }) => (
-                        <div className="user-main__profile" key={id}>
+                        <div className='user-main__profile' key={id}>
                             <i className={`user-main__profile__icon ${getSocialIcon(service)}`} />
                             <a
-                                className="user-main__profile__text"
+                                className='user-main__profile__text'
                                 href={url}
-                                target="_blank"
-                                rel="noopener noreferrer">
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
                                 {title || service}
                             </a>
                         </div>
                     ))}
                 </div>
                 <div
-                    className="user-main__description"
+                    className='user-main__description'
                     dangerouslySetInnerHTML={{ __html: description }}
                 />
             </div>

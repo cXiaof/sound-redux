@@ -41,12 +41,13 @@ const SongsBodyCard = ({
 
     return (
         <div className={`songs-body-card ${isActive ? 'songs-body-card--active' : ''}`}>
-            <div className="songs-body-card__inner">
+            <div className='songs-body-card__inner'>
                 <div
-                    className="songs-body-card__artwork"
+                    className='songs-body-card__artwork'
                     style={{
                         backgroundImage: `url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`
-                    }}>
+                    }}
+                >
                     <ArtworkPlay
                         index={index}
                         isActive={isActive}
@@ -55,34 +56,36 @@ const SongsBodyCard = ({
                         playSong={playSong}
                     />
                 </div>
-                <div className="songs-body-card__main">
+                <div className='songs-body-card__main'>
                     <div
-                        className="songs-body-card__avatar"
+                        className='songs-body-card__avatar'
                         style={{
                             backgroundImage: `url(${getImageUrl(avatarUrl)})`
                         }}
                     />
-                    <div className="songs-body-card__details">
+                    <div className='songs-body-card__details'>
                         <Link
-                            className="songs-body-card__title"
+                            className='songs-body-card__title'
                             keys={{ id }}
                             navigateTo={navigateTo}
                             path={SONG_PATH}
-                            title={title}>
+                            title={title}
+                        >
                             {formatSongTitle(title)}
                         </Link>
                         <Link
-                            className="songs-body-card__username"
+                            className='songs-body-card__username'
                             keys={{ id: user.id }}
                             navigateTo={navigateTo}
                             path={USER_PATH}
-                            title={username}>
+                            title={username}
+                        >
                             {username}
                         </Link>
                     </div>
                 </div>
                 <Heart
-                    className="songs-body-card__heart popover--right"
+                    className='songs-body-card__heart popover--right'
                     id={id}
                     isAuthenticated={isAuthenticated}
                     liked={liked}

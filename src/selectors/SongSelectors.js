@@ -27,7 +27,10 @@ export const getSongComments = createSelector(
     (song) => (song && song.comments ? song.comments : [])
 )
 
-export const getPlaylist = createSelector(getId, (id) => [SONG_PLAYLIST_TYPE, id].join('|'))
+export const getPlaylist = createSelector(
+    getId,
+    (id) => [SONG_PLAYLIST_TYPE, id].join('|')
+)
 
 export const getSongs = createSelector(
     getPlaylist,

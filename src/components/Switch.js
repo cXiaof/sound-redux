@@ -28,9 +28,10 @@ class Switch extends Component {
             <div
                 className={`switch ${on ? 'switch--on' : ''}`}
                 onClick={this.onClick}
-                role="button"
-                tabIndex="0">
-                <div className="switch__button" />
+                role='button'
+                tabIndex='0'
+            >
+                <div className='switch__button' />
             </div>
         )
     }

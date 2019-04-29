@@ -44,7 +44,8 @@ class Link extends Component {
                 className={className}
                 href={`/${compileHash({ path, keys, options })}`}
                 onClick={this.onClick}
-                title={title}>
+                title={title}
+            >
                 {children}
             </a>
         )

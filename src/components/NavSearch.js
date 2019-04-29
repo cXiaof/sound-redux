@@ -48,16 +48,16 @@ class NavSearch extends Component {
 
     render() {
         return (
-            <div className="nav-search">
-                <i className="nav-search__icon ion-search" />
+            <div className='nav-search'>
+                <i className='nav-search__icon ion-search' />
                 <input
                     ref={(node) => {
                         this.input = node
                     }}
-                    className="nav-search__input"
-                    placeholder="SEARCH"
+                    className='nav-search__input'
+                    placeholder='SEARCH'
                     onKeyPress={this.onKeyPress}
-                    type="text"
+                    type='text'
                 />
             </div>
         )

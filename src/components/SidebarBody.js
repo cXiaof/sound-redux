@@ -21,7 +21,7 @@ class SidebarBody extends Component {
         const { children } = this.props
 
         return (
-            <div className="sidebar__body" onScroll={onScroll}>
+            <div className='sidebar__body' onScroll={onScroll}>
                 <div onMouseLeave={onMouseLeave}>{children}</div>
             </div>
         )

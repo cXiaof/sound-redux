@@ -31,30 +31,34 @@ class SongsHeaderGenres extends Component {
             <div
                 className={`songs-header__genres ${
                     expanded ? 'songs-header__genres--expanded' : ''
-                }`}>
+                }`}
+            >
                 <div
-                    className="songs-header__genres__active"
+                    className='songs-header__genres__active'
                     onClick={this.onClick}
-                    role="button"
-                    tabIndex="0">
+                    role='button'
+                    tabIndex='0'
+                >
                     {genre || 'genre'}
                 </div>
-                <div className="songs-header__genres__main">
+                <div className='songs-header__genres__main'>
                     {genres.map((g) => (
                         <div
                             className={`songs-header__genre ${
                                 g.key === genre ? 'songs-header__genre--active' : ''
                             }`}
-                            key={g.key}>
+                            key={g.key}
+                        >
                             <Link
-                                className="songs-header__genre__text"
+                                className='songs-header__genre__text'
                                 navigateTo={navigateTo}
                                 onClick={this.onClick}
                                 options={{
                                     g: g.key,
                                     ...(time ? { t: time } : {})
                                 }}
-                                path={SONGS_PATH}>
+                                path={SONGS_PATH}
+                            >
                                 {g.key}
                             </Link>
                         </div>

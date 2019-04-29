@@ -9,7 +9,10 @@ import {
     getSessionFollowings
 } from '../selectors/CommonSelectors'
 
-export const getPlaylist = createSelector(getId, (id) => [USER_PLAYLIST_TYPE, id].join('|'))
+export const getPlaylist = createSelector(
+    getId,
+    (id) => [USER_PLAYLIST_TYPE, id].join('|')
+)
 
 export const getSongs = createSelector(
     getPlaylist,
@@ -32,17 +35,23 @@ export const getFollowings = createSelector(
         user && user.followings ? denormalize(user.followings, [userSchema], entities) : []
 )
 
-export const getIsFollowing = createSelector(getId, getSessionFollowings, (id, followings) =>
-    Boolean(id in followings && followings[id])
+export const getIsFollowing = createSelector(
+    getId,
+    getSessionFollowings,
+    (id, followings) => Boolean(id in followings && followings[id])
 )
 
-export const getShouldFetchUser = createSelector(getId, getEntities, (id, entities) => {
-    const { users } = entities
-    const userExists = id in users
-    const userHasProfiles = userExists ? 'profiles' in users[id] : false
+export const getShouldFetchUser = createSelector(
+    getId,
+    getEntities,
+    (id, entities) => {
+        const { users } = entities
+        const userExists = id in users
+        const userHasProfiles = userExists ? 'profiles' in users[id] : false
 
-    return !userExists || !userHasProfiles
-})
+        return !userExists || !userHasProfiles
+    }
+)
 
 export const getProfiles = createSelector(
     getUser,

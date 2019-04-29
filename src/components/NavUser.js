@@ -20,13 +20,13 @@ const NavUser = ({ isAuthenticated, login, logout, user }) => {
     if (isAuthenticated) {
         const { avatarUrl } = user
         return (
-            <Popover className="nav-user popover--right">
-                <div className="nav-user__trigger">
+            <Popover className='nav-user popover--right'>
+                <div className='nav-user__trigger'>
                     <div
-                        className="nav-user__avatar"
+                        className='nav-user__avatar'
                         style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
                     />
-                    <i className="nav-user__chevron ion-chevron-down" />
+                    <i className='nav-user__chevron ion-chevron-down' />
                 </div>
                 <SessionPopoverPanel logout={logout} />
             </Popover>
@@ -34,10 +34,10 @@ const NavUser = ({ isAuthenticated, login, logout, user }) => {
     }
 
     return (
-        <Popover className="nav-user popover--right">
-            <div className="nav-user__trigger">
-                <i className="nav-user__icon ion-person" />
-                <i className="nav-user__chevron ion-chevron-down" />
+        <Popover className='nav-user popover--right'>
+            <div className='nav-user__trigger'>
+                <i className='nav-user__icon ion-person' />
+                <i className='nav-user__chevron ion-chevron-down' />
             </div>
             <LoginPopoverPanel login={login} />
         </Popover>

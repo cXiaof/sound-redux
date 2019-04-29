@@ -27,8 +27,9 @@ class UserFollowButton extends Component {
                     isFollowing ? 'button--red' : ''
                 }`}
                 onClick={this.onClick}
-                role="button"
-                tabIndex="0">
+                role='button'
+                tabIndex='0'
+            >
                 {isFollowing ? 'Following' : 'Follow'}
             </div>
         )

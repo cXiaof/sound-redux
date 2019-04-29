@@ -34,9 +34,9 @@ const SongsHeader = ({
 
     return (
         <div className={`songs-header ${sticky ? 'songs-header--sticky' : ''}`}>
-            <div className="songs-header__inner">
-                <div className="songs-header__sections container">
-                    <div className="songs-header__section songs-header__section--genres">
+            <div className='songs-header__inner'>
+                <div className='songs-header__sections container'>
+                    <div className='songs-header__section songs-header__section--genres'>
                         <SongsHeaderGenres
                             genre={genre}
                             genres={genres}
@@ -44,7 +44,7 @@ const SongsHeader = ({
                             time={time}
                         />
                     </div>
-                    <div className="songs-header__section songs-header__section--time">
+                    <div className='songs-header__section songs-header__section--time'>
                         <SongsHeaderTimes
                             genre={genre}
                             navigateTo={navigateTo}

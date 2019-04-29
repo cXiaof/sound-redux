@@ -35,8 +35,8 @@ class Heart extends Component {
         if (!isAuthenticated) {
             return (
                 <Popover className={`heart ${className}`}>
-                    <div className="heart__inner">
-                        <i className="heart__icon ion-ios-heart" />
+                    <div className='heart__inner'>
+                        <i className='heart__icon ion-ios-heart' />
                         <HeartCount favoritingsCount={favoritingsCount} />
                     </div>
                     <LoginPopoverPanel login={login} />
@@ -46,8 +46,8 @@ class Heart extends Component {
 
         return (
             <div className={`heart ${liked ? 'heart--liked' : ''} ${className} `}>
-                <div className="heart__inner" onClick={this.onClick} role="button" tabIndex="0">
-                    <i className="heart__icon ion-ios-heart" />
+                <div className='heart__inner' onClick={this.onClick} role='button' tabIndex='0'>
+                    <i className='heart__icon ion-ios-heart' />
                     <HeartCount favoritingsCount={favoritingsCount} />
                 </div>
             </div>

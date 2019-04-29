@@ -6,7 +6,7 @@ const propTypes = {
 }
 
 const SessionPopoverPanel = ({ logout }) => (
-    <div className="popover__panel__item" onClick={logout} role="button" tabIndex="0">
+    <div className='popover__panel__item' onClick={logout} role='button' tabIndex='0'>
         Logout
     </div>
 )

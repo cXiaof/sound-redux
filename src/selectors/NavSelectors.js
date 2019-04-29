@@ -11,8 +11,9 @@ import {
     getPath
 } from '../selectors/CommonSelectors'
 
-export const getNavPlaylists = createSelector(getEntities, (entities) =>
-    denormalize(Object.keys(entities.playlists), [playlistSchema], entities)
+export const getNavPlaylists = createSelector(
+    getEntities,
+    (entities) => denormalize(Object.keys(entities.playlists), [playlistSchema], entities)
 )
 
 export const getNavPlaylist = createSelector(

@@ -41,7 +41,7 @@ const NavSession = ({
     }
 
     return (
-        <div className="nav-session">
+        <div className='nav-session'>
             <NavStream
                 fetchNewStreamSongs={fetchNewStreamSongs}
                 loadNewStreamSongs={loadNewStreamSongs}
@@ -54,7 +54,8 @@ const NavSession = ({
                 className={`nav-session__item ${showLikes ? 'nav-session__item--active' : ''}`}
                 navigateTo={navigateTo}
                 path={SONGS_PATH}
-                options={{ s: 'likes' }}>
+                options={{ s: 'likes' }}
+            >
                 Likes
             </Link>
             <NavPlaylists

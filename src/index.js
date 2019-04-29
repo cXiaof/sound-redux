@@ -5,20 +5,24 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import * as serviceWorker from './serviceWorker'
 
+import './stylesheets/normalize.scss'
 import './stylesheets/main.scss'
 
 import RootContainer from './containers/RootContainer'
 import reducerSet from './reducerSet'
 
-const store = window.__REDUX_DEVTOOLS_EXTENSION__
-    ? createStore(
-          combineReducers(reducerSet),
-          compose(
-              applyMiddleware(thunk),
-              window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const reducer = combineReducers(reducerSet)
+const middleware = applyMiddleware(thunk)
+const store =
+    !global.debug || !window.__REDUX_DEVTOOLS_EXTENSION__
+        ? createStore(reducer, middleware)
+        : createStore(
+              reducer,
+              compose(
+                  middleware,
+                  window.__REDUX_DEVTOOLS_EXTENSION__({ trace: true })
+              )
           )
-      )
-    : createStore(combineReducers(reducerSet), applyMiddleware(thunk))
 
 render(
     <Provider store={store}>

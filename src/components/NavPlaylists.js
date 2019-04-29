@@ -15,14 +15,14 @@ const propTypes = {
 }
 
 const NavPlaylists = ({ navigateTo, navPlaylist, navPlaylists, showPlaylist }) => (
-    <Popover className="nav-playlists">
+    <Popover className='nav-playlists'>
         <div className={`nav-session__item ${showPlaylist ? 'nav-session__item--active' : ''}`}>
-            <div className="nav-session__item__text">
+            <div className='nav-session__item__text'>
                 {navPlaylist ? navPlaylist.title : 'Playlists'}
             </div>
-            <i className="nav-session__item__icon ion-ios-arrow-down" />
+            <i className='nav-session__item__icon ion-ios-arrow-down' />
         </div>
-        <div className="nav-playlists__panel">
+        <div className='nav-playlists__panel'>
             {navPlaylists.map((playlist) => (
                 <NavPlaylistsItem key={playlist.id} navigateTo={navigateTo} playlist={playlist} />
             ))}

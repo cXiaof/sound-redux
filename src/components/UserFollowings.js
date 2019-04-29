@@ -13,9 +13,10 @@ const propTypes = {
 const UserFollowings = ({ followings, navigateTo, sidebarHeight, sticky }) => (
     <div
         className={`sidebar ${sticky ? 'sidebar--sticky' : ''}`}
-        style={{ height: `${sidebarHeight}px` }}>
-        <div className="sidebar__header">
-            <div className="sidebar__header__left">
+        style={{ height: `${sidebarHeight}px` }}
+    >
+        <div className='sidebar__header'>
+            <div className='sidebar__header__left'>
                 {`Following ${followings.length} User${followings.length === 1 ? '' : 's'}`}
             </div>
         </div>

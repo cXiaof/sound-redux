@@ -32,7 +32,7 @@ const Stats = ({
 }) => (
     <div className={`stats ${className}`}>
         <Heart
-            className="stats__stat stats__stat--heart"
+            className='stats__stat stats__stat--heart'
             favoritingsCount={favoritingsCount}
             id={id}
             isAuthenticated={isAuthenticated}
@@ -40,13 +40,13 @@ const Stats = ({
             login={login}
             toggleLike={toggleLike}
         />
-        <div className="stats__stat">
-            <i className="stats__stat__icon ion-play" />
-            <span className="stats__stat__text">{addCommas(playbackCount)}</span>
+        <div className='stats__stat'>
+            <i className='stats__stat__icon ion-play' />
+            <span className='stats__stat__text'>{addCommas(playbackCount)}</span>
         </div>
-        <div className="stats__stat">
-            <i className="stats__stat__icon ion-chatbubble" />
-            <span className="stats__stat__text">{addCommas(commentCount)}</span>
+        <div className='stats__stat'>
+            <i className='stats__stat__icon ion-chatbubble' />
+            <span className='stats__stat__text'>{addCommas(commentCount)}</span>
         </div>
     </div>
 )

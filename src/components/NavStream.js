@@ -48,11 +48,12 @@ class NavStream extends Component {
                 navigateTo={navigateTo}
                 onClick={this.onClick}
                 options={{ s: 'stream' }}
-                path={SONGS_PATH}>
+                path={SONGS_PATH}
+            >
                 Stream
                 {newStreamSongsCount ? (
-                    <div className="nav-session__item__badge">
-                        <div className="nav-session__item__badge__text">{newStreamSongsCount}</div>
+                    <div className='nav-session__item__badge'>
+                        <div className='nav-session__item__badge__text'>{newStreamSongsCount}</div>
                     </div>
                 ) : null}
             </Link>

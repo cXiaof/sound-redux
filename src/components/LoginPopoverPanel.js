@@ -7,10 +7,11 @@ const propTypes = {
 
 const LoginPopoverPanel = ({ login }) => (
     <div
-        className="button button--orange button--block button--margin"
+        className='button button--orange button--block button--margin'
         onClick={login}
-        role="button"
-        tabIndex="0">
+        role='button'
+        tabIndex='0'
+    >
         Sign into SoundCloud
     </div>
 )

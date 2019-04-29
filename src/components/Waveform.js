@@ -57,16 +57,16 @@ class Waveform extends Component {
         return (
             <div className={`waveform ${isActive ? 'waveform--active' : ''} ${className}`}>
                 <div
-                    className="waveform__image"
+                    className='waveform__image'
                     style={{ backgroundImage: `url(${waveformUrl})` }}
                 />
-                <div className="waveform__bg" style={{ width: `${width}%` }} />
-                <div className="waveform__seek-bg" style={{ width: `${seek}%` }} />
-                <div className="waveform__hover-icon">
-                    <i className="ion-ios-play" />
+                <div className='waveform__bg' style={{ width: `${width}%` }} />
+                <div className='waveform__seek-bg' style={{ width: `${seek}%` }} />
+                <div className='waveform__hover-icon'>
+                    <i className='ion-ios-play' />
                 </div>
-                <div className="waveform__hover-bg" />
-                <div className="waveform__seek-line" style={{ width: `${seek}%` }} />
+                <div className='waveform__hover-bg' />
+                <div className='waveform__seek-line' style={{ width: `${seek}%` }} />
                 <WaveformEvents
                     isActive={isActive}
                     onMouseMove={this.onMouseMove}

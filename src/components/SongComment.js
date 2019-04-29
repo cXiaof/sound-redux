@@ -14,16 +14,16 @@ const SongComment = ({ comment, index }) => {
     const { avatarUrl, username } = user
 
     return (
-        <div className="song-comment" style={{ animationDelay: `${index * 50}ms` }}>
+        <div className='song-comment' style={{ animationDelay: `${index * 50}ms` }}>
             <div
-                className="song-comment__image"
+                className='song-comment__image'
                 style={{ backgroundImage: `url(${getImageUrl(avatarUrl, IMAGE_SIZES.LARGE)})` }}
             />
-            <div className="song-comment__main">
-                <div className="song-comment__body">{body}</div>
-                <div className="song-comment__username">{username}</div>
+            <div className='song-comment__main'>
+                <div className='song-comment__body'>{body}</div>
+                <div className='song-comment__username'>{username}</div>
             </div>
-            <div className="song-comment__time">{formatSeconds(unixTimestamp)}</div>
+            <div className='song-comment__time'>{formatSeconds(unixTimestamp)}</div>
         </div>
     )
 }

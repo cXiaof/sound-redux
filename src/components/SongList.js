@@ -41,24 +41,23 @@ const SongList = ({
     toggleLike
 }) => (
     <div className={`song-list ${className}`}>
-        {songs.map(
-            (song, i) =>
-                song.id !== id ? (
-                    <SongListItem
-                        index={i + offsetIndex}
-                        isActive={playingSongId === song.id}
-                        isAuthenticated={isAuthenticated}
-                        key={song.id}
-                        liked={Boolean(song.id in likes && likes[song.id])}
-                        login={login}
-                        navigateTo={navigateTo}
-                        player={player}
-                        playlist={playlist}
-                        playSong={playSong}
-                        song={song}
-                        toggleLike={toggleLike}
-                    />
-                ) : null
+        {songs.map((song, i) =>
+            song.id !== id ? (
+                <SongListItem
+                    index={i + offsetIndex}
+                    isActive={playingSongId === song.id}
+                    isAuthenticated={isAuthenticated}
+                    key={song.id}
+                    liked={Boolean(song.id in likes && likes[song.id])}
+                    login={login}
+                    navigateTo={navigateTo}
+                    player={player}
+                    playlist={playlist}
+                    playSong={playSong}
+                    song={song}
+                    toggleLike={toggleLike}
+                />
+            ) : null
         )}
     </div>
 )

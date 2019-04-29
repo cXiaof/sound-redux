@@ -8,8 +8,14 @@ export const getEntities = (state) => state.entities
 // environment selectors
 export const getHeight = (state) => state.environment.height
 export const getWidth = (state) => state.environment.width
-export const getSidebarHeight = createSelector(getHeight, (height) => height - 200)
-export const getIsMobile = createSelector(getWidth, (width) => width < TABLET_WIDTH)
+export const getSidebarHeight = createSelector(
+    getHeight,
+    (height) => height - 200
+)
+export const getIsMobile = createSelector(
+    getWidth,
+    (width) => width < TABLET_WIDTH
+)
 
 // playlists selectors
 export const getPlaylists = (state) => state.playlists
@@ -54,7 +60,10 @@ export const getShowLikes = createSelector(
     getSession,
     (path, session) => path === SONGS_PATH && session === 'likes'
 )
-export const getShowPlaylist = createSelector(getPath, (path) => path === PLAYLIST_PATH)
+export const getShowPlaylist = createSelector(
+    getPath,
+    (path) => path === PLAYLIST_PATH
+)
 export const getShowStream = createSelector(
     getPath,
     getSession,

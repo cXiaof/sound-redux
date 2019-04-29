@@ -65,13 +65,13 @@ class Song extends Component {
             toggleLike
         } = this.props
         if (!song) {
-            return <Loader className="loader--full" isLoading />
+            return <Loader className='loader--full' isLoading />
         }
 
         return (
-            <div className="container">
-                <div className="song content">
-                    <div className="song__main">
+            <div className='container'>
+                <div className='song content'>
+                    <div className='song__main'>
                         <SongMain
                             isActive={playingSongId === id}
                             isAuthenticated={isAuthenticated}
@@ -85,7 +85,7 @@ class Song extends Component {
                             toggleLike={toggleLike}
                         />
                         <SongList
-                            className="song__song-list"
+                            className='song__song-list'
                             id={id}
                             isAuthenticated={isAuthenticated}
                             likes={likes}
@@ -100,7 +100,7 @@ class Song extends Component {
                             toggleLike={toggleLike}
                         />
                     </div>
-                    <div className="song__sidebar">
+                    <div className='song__sidebar'>
                         <SongComments
                             comments={comments}
                             id={id}

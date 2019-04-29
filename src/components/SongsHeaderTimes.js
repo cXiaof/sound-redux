@@ -12,9 +12,9 @@ const propTypes = {
 }
 
 const SongsHeaderTimes = ({ genre, navigateTo, search, time, times }) => (
-    <div className="songs-header__times">
-        <div className="songs-header__times__inner">
-            <i className="songs-header__times__icon ion-funnel" />
+    <div className='songs-header__times'>
+        <div className='songs-header__times__inner'>
+            <i className='songs-header__times__icon ion-funnel' />
             {times.map((t) => (
                 <Link
                     className={`songs-header__time ${
@@ -27,7 +27,8 @@ const SongsHeaderTimes = ({ genre, navigateTo, search, time, times }) => (
                         ...(genre ? { g: genre } : {}),
                         ...(search ? { q: search } : {})
                     }}
-                    path={SONGS_PATH}>
+                    path={SONGS_PATH}
+                >
                     {t.label}
                 </Link>
             ))}
