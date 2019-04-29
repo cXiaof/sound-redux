@@ -1,6 +1,10 @@
 import moment from 'moment'
 import { denormalize } from 'normalizr'
-import { SESSION_LIKES_URL, SESSION_STREAM_URL, SONGS_URL } from '../constants/ApiConstants'
+import {
+    SESSION_LIKES_URL,
+    SESSION_STREAM_URL,
+    SONGS_URL
+} from '../constants/ApiConstants'
 import {
     GENRE_PLAYLIST_TYPE,
     GENRE_QUERY_MAP,
@@ -55,11 +59,15 @@ const playlistUrl = (playlist) => {
 
 const playlistNextUrl = (playlist, playlists, oauthToken) =>
     playlist in playlists && playlists[playlist].nextUrl
-        ? `${playlists[playlist].nextUrl}${oauthToken ? `&oauth_token=${oauthToken}` : ''}`
+        ? `${playlists[playlist].nextUrl}${
+              oauthToken ? `&oauth_token=${oauthToken}` : ''
+          }`
         : null
 
 const playlistSongs = (playlist, playlists, entities) =>
-    playlist in playlists ? denormalize(playlists[playlist].items, [songSchema], entities) : []
+    playlist in playlists
+        ? denormalize(playlists[playlist].items, [songSchema], entities)
+        : []
 
 export const playlistData = (
     genre,

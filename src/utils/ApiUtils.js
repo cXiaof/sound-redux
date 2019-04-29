@@ -4,7 +4,8 @@ import SC from 'soundcloud'
 export const callApi = (url, options) =>
     fetch(url, options)
         .then(
-            (response) => (response.ok ? response.json() : Promise.reject(response.text())),
+            (response) =>
+                response.ok ? response.json() : Promise.reject(response.text()),
             (error) => Promise.reject(error)
         )
         .then((json) => ({ json: camelize(json) }), (error) => ({ error }))
@@ -13,7 +14,9 @@ export const callApi = (url, options) =>
 export const loginToSoundCloud = (clientId) => {
     SC.initialize({
         client_id: clientId,
-        redirect_uri: `${window.location.protocol}//${window.location.host}/api/callback`
+        redirect_uri: `${window.location.protocol}//${
+            window.location.host
+        }/api/callback`
     })
 
     return SC.connect()

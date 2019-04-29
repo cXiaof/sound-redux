@@ -51,7 +51,9 @@ const NavSession = ({
                 streamFutureUrl={streamFutureUrl}
             />
             <Link
-                className={`nav-session__item ${showLikes ? 'nav-session__item--active' : ''}`}
+                className={`nav-session__item ${
+                    showLikes ? 'nav-session__item--active' : ''
+                }`}
                 navigateTo={navigateTo}
                 path={SONGS_PATH}
                 options={{ s: 'likes' }}

@@ -51,7 +51,10 @@ const SongMain = ({
                 <div
                     className='song-main__artwork__image'
                     style={{
-                        backgroundImage: `url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`
+                        backgroundImage: `url(${getImageUrl(
+                            artworkUrl,
+                            IMAGE_SIZES.LARGE
+                        )})`
                     }}
                 >
                     <ArtworkPlay
@@ -68,7 +71,9 @@ const SongMain = ({
                 <div className='song-main__user'>
                     <div
                         className='song-main__user__avatar'
-                        style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
+                        style={{
+                            backgroundImage: `url(${getImageUrl(avatarUrl)})`
+                        }}
                     />
                     <Link
                         className='song-main__user__username'

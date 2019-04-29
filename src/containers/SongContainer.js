@@ -12,7 +12,13 @@ import {
     getPlayingSongId,
     getSidebarHeight
 } from '../selectors/CommonSelectors'
-import { getComments, getPlaylist, getSong, getSongs, getTimed } from '../selectors/SongSelectors'
+import {
+    getComments,
+    getPlaylist,
+    getSong,
+    getSongs,
+    getTimed
+} from '../selectors/SongSelectors'
 
 const SongContainer = (props) => <Song {...props} />
 

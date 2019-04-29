@@ -18,7 +18,8 @@ const player = (state = initialState, action) => {
             return {
                 ...state,
                 playingIndex:
-                    state.playlist === SESSION_STREAM_PLAYLIST && state.playingIndex !== null
+                    state.playlist === SESSION_STREAM_PLAYLIST &&
+                    state.playingIndex !== null
                         ? state.playingIndex + action.newStreamSongs.length
                         : state.playingIndex
             }

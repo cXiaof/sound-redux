@@ -2,7 +2,9 @@ const API_HOSTNAME = '//api.soundcloud.com'
 export const CLIENT_ID = 'a281614d7f34dc30b665dfcaa3ed7505'
 
 const constructUrl = (url) =>
-    `${API_HOSTNAME}${url}${url.includes('?') ? '&' : '?'}client_id=${CLIENT_ID}`
+    `${API_HOSTNAME}${url}${
+        url.includes('?') ? '&' : '?'
+    }client_id=${CLIENT_ID}`
 
 export const SESSION_FOLLOWINGS_URL = `${API_HOSTNAME}/me/followings`
 export const SESSION_LIKES_URL = `${API_HOSTNAME}/me/favorites`
@@ -13,7 +15,9 @@ export const TOGGLE_FOLLOW_URL = `${API_HOSTNAME}/me/followings/:id`
 export const TOGGLE_LIKE_URL = `${API_HOSTNAME}/me/favorites/:id`
 export const SONG_URL = constructUrl('/tracks/:id')
 export const SONG_COMMENTS_URL = constructUrl('/tracks/:id/comments')
-export const SONGS_URL = constructUrl('/tracks?linked_partitioning=1&limit=50&offset=0')
+export const SONGS_URL = constructUrl(
+    '/tracks?linked_partitioning=1&limit=50&offset=0'
+)
 export const USER_FOLLOWINGS_URL = constructUrl('/users/:id/followings')
 export const USER_PROFILES_URL = constructUrl('/users/:id/web-profiles')
 export const USER_URL = constructUrl('/users/:id')

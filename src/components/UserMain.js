@@ -21,7 +21,12 @@ const UserMain = ({ isFollowing, profiles, toggleFollow, user }) => {
             <div className='user-main__avatar'>
                 <div
                     className='user-main__avatar__image'
-                    style={{ backgroundImage: `url(${getImageUrl(avatarUrl, IMAGE_SIZES.LARGE)})` }}
+                    style={{
+                        backgroundImage: `url(${getImageUrl(
+                            avatarUrl,
+                            IMAGE_SIZES.LARGE
+                        )})`
+                    }}
                 />
             </div>
             <div className='user-main__main'>
@@ -37,18 +42,26 @@ const UserMain = ({ isFollowing, profiles, toggleFollow, user }) => {
                 </div>
                 <div className='user-main__location'>
                     <i className='user-main__location__icon ion-location' />
-                    <div className='user-main__location__text'>{getLocation(user)}</div>
+                    <div className='user-main__location__text'>
+                        {getLocation(user)}
+                    </div>
                 </div>
                 <div className='user-main__meta'>
                     <div className='user-main__followings'>
                         <div className='user-main__followings__count'>
                             {addCommas(followersCount)}
                         </div>
-                        <div className='user-main__followings__text'>Followers</div>
+                        <div className='user-main__followings__text'>
+                            Followers
+                        </div>
                     </div>
                     {profiles.map(({ id, service, title, url }) => (
                         <div className='user-main__profile' key={id}>
-                            <i className={`user-main__profile__icon ${getSocialIcon(service)}`} />
+                            <i
+                                className={`user-main__profile__icon ${getSocialIcon(
+                                    service
+                                )}`}
+                            />
                             <a
                                 className='user-main__profile__text'
                                 href={url}

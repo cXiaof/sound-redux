@@ -44,7 +44,9 @@ class NavStream extends Component {
 
         return (
             <Link
-                className={`nav-session__item ${showStream ? 'nav-session__item--active' : ''}`}
+                className={`nav-session__item ${
+                    showStream ? 'nav-session__item--active' : ''
+                }`}
                 navigateTo={navigateTo}
                 onClick={this.onClick}
                 options={{ s: 'stream' }}
@@ -53,7 +55,9 @@ class NavStream extends Component {
                 Stream
                 {newStreamSongsCount ? (
                     <div className='nav-session__item__badge'>
-                        <div className='nav-session__item__badge__text'>{newStreamSongsCount}</div>
+                        <div className='nav-session__item__badge__text'>
+                            {newStreamSongsCount}
+                        </div>
                     </div>
                 ) : null}
             </Link>

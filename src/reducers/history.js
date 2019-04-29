@@ -8,7 +8,9 @@ const playlists = (state = [], action) => {
         case 'PLAY_SONG':
             return [
                 ...state.filter((playlist) => playlist !== action.playlist),
-                ...(action.playlist === state[state.length - 1] ? [action.playlist] : [])
+                ...(action.playlist === state[state.length - 1]
+                    ? [action.playlist]
+                    : [])
             ]
 
         default:

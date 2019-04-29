@@ -31,7 +31,13 @@ class Heart extends Component {
     }
 
     render() {
-        const { className, favoritingsCount, isAuthenticated, liked, login } = this.props
+        const {
+            className,
+            favoritingsCount,
+            isAuthenticated,
+            liked,
+            login
+        } = this.props
         if (!isAuthenticated) {
             return (
                 <Popover className={`heart ${className}`}>
@@ -45,8 +51,15 @@ class Heart extends Component {
         }
 
         return (
-            <div className={`heart ${liked ? 'heart--liked' : ''} ${className} `}>
-                <div className='heart__inner' onClick={this.onClick} role='button' tabIndex='0'>
+            <div
+                className={`heart ${liked ? 'heart--liked' : ''} ${className} `}
+            >
+                <div
+                    className='heart__inner'
+                    onClick={this.onClick}
+                    role='button'
+                    tabIndex='0'
+                >
                     <i className='heart__icon ion-ios-heart' />
                     <HeartCount favoritingsCount={favoritingsCount} />
                 </div>

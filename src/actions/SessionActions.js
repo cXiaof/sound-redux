@@ -39,19 +39,24 @@ export const fetchNewStreamSongs = (url) => async (dispatch, getState) => {
     const { json } = await callApi(url)
     const { playlists } = getState()
     const items =
-        SESSION_STREAM_PLAYLIST in playlists ? playlists[SESSION_STREAM_PLAYLIST].items : []
+        SESSION_STREAM_PLAYLIST in playlists
+            ? playlists[SESSION_STREAM_PLAYLIST].items
+            : []
     const itemsMap = items.reduce((obj, id) => ({ ...obj, [id]: 1 }), {})
 
     const { collection, futureHref } = json
 
     const futureUrl = futureHref || null
     const songs = collection.filter(
-        (song) => song.kind === 'track' && song.streamable && !(song.id in itemsMap)
+        (song) =>
+            song.kind === 'track' && song.streamable && !(song.id in itemsMap)
     )
 
     const { result, entities } = normalize(songs, [songSchema])
 
-    dispatch(fetchNewStreamSongsSuccess([...new Set(result)], entities, futureUrl))
+    dispatch(
+        fetchNewStreamSongsSuccess([...new Set(result)], entities, futureUrl)
+    )
 }
 
 const fetchSessionFollowingsSuccess = (followings, entities) => ({
@@ -61,7 +66,9 @@ const fetchSessionFollowingsSuccess = (followings, entities) => ({
 })
 
 const fetchSessionFollowings = (oauthToken) => async (dispatch) => {
-    const { json } = await callApi(`${SESSION_FOLLOWINGS_URL}?oauth_token=${oauthToken}`)
+    const { json } = await callApi(
+        `${SESSION_FOLLOWINGS_URL}?oauth_token=${oauthToken}`
+    )
     const { collection } = json
     const { result, entities } = normalize(collection, [userSchema])
     const followings = result.reduce(
@@ -83,14 +90,18 @@ const fetchSessionLikesSuccess = (likes) => ({
 const fetchSessionLikes = (oauthToken) => async (dispatch) => {
     dispatch(fetchSongsRequest(SESSION_LIKES_PLAYLIST))
 
-    const { json } = await callApi(`${SESSION_LIKES_URL}?oauth_token=${oauthToken}`)
+    const { json } = await callApi(
+        `${SESSION_LIKES_URL}?oauth_token=${oauthToken}`
+    )
     const songs = json.filter((song) => song.streamable)
     const { result, entities } = normalize(songs, [songSchema])
 
     const likes = result.reduce((obj, id) => ({ ...obj, [id]: 1 }), {})
 
     dispatch(fetchSessionLikesSuccess(likes))
-    dispatch(fetchSongsSuccess(SESSION_LIKES_PLAYLIST, result, entities, null, null))
+    dispatch(
+        fetchSongsSuccess(SESSION_LIKES_PLAYLIST, result, entities, null, null)
+    )
 }
 
 const fetchSessionPlaylistsSuccess = (entities) => ({
@@ -99,12 +110,22 @@ const fetchSessionPlaylistsSuccess = (entities) => ({
 })
 
 const fetchSessionPlaylists = (oauthToken) => async (dispatch) => {
-    const { json } = await callApi(`${SESSION_PLAYLISTS_URL}?oauth_token=${oauthToken}`)
+    const { json } = await callApi(
+        `${SESSION_PLAYLISTS_URL}?oauth_token=${oauthToken}`
+    )
 
     json.forEach((playlist) => {
         const { id, tracks } = playlist
         const { entities, result } = normalize(tracks, [songSchema])
-        dispatch(fetchSongsSuccess(`${PLAYLIST_PLAYLIST_TYPE}|${id}`, result, entities, null, null))
+        dispatch(
+            fetchSongsSuccess(
+                `${PLAYLIST_PLAYLIST_TYPE}|${id}`,
+                result,
+                entities,
+                null,
+                null
+            )
+        )
     })
 
     const { entities } = normalize(json, [playlistSchema])
@@ -120,7 +141,9 @@ const fetchSessionUserSuccess = (id, entities) => ({
 })
 
 const fetchSessionUser = (oauthToken) => async (dispatch) => {
-    const { json } = await callApi(`${SESSION_USER_URL}?oauth_token=${oauthToken}`)
+    const { json } = await callApi(
+        `${SESSION_USER_URL}?oauth_token=${oauthToken}`
+    )
     const { result, entities } = normalize(json, userSchema)
 
     dispatch(fetchSessionUserSuccess(result, entities))

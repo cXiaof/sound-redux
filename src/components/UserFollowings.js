@@ -17,12 +17,18 @@ const UserFollowings = ({ followings, navigateTo, sidebarHeight, sticky }) => (
     >
         <div className='sidebar__header'>
             <div className='sidebar__header__left'>
-                {`Following ${followings.length} User${followings.length === 1 ? '' : 's'}`}
+                {`Following ${followings.length} User${
+                    followings.length === 1 ? '' : 's'
+                }`}
             </div>
         </div>
         <SidebarBody>
             {followings.map((following) => (
-                <UserFollowing following={following} key={following.id} navigateTo={navigateTo} />
+                <UserFollowing
+                    following={following}
+                    key={following.id}
+                    navigateTo={navigateTo}
+                />
             ))}
         </SidebarBody>
     </div>

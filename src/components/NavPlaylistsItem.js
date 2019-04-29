@@ -31,7 +31,11 @@ const NavPlaylistsItem = ({ navigateTo, playlist }) => {
                     <div
                         className='nav-playlists__item__song'
                         key={song.id}
-                        style={{ backgroundImage: `url(${getImageUrl(song.artworkUrl)})` }}
+                        style={{
+                            backgroundImage: `url(${getImageUrl(
+                                song.artworkUrl
+                            )})`
+                        }}
                     />
                 ))}
             </div>

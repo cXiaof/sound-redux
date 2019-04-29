@@ -48,7 +48,11 @@ const Nav = ({
         <div className='nav__inner container'>
             <div className='nav__section'>
                 <i className='nav__logo__icon ion-radio-waves' />
-                <Link className='nav__logo__text' navigateTo={navigateTo} path={SONGS_PATH}>
+                <Link
+                    className='nav__logo__text'
+                    navigateTo={navigateTo}
+                    path={SONGS_PATH}
+                >
                     SoundRedux
                 </Link>
             </div>

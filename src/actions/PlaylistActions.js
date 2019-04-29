@@ -9,7 +9,13 @@ export const fetchSongsRequest = (playlist) => ({
     playlist
 })
 
-export const fetchSongsSuccess = (playlist, items, entities, nextUrl, futureUrl) => ({
+export const fetchSongsSuccess = (
+    playlist,
+    items,
+    entities,
+    nextUrl,
+    futureUrl
+) => ({
     type: 'FETCH_SONGS_SUCCESS',
     entities,
     futureUrl,
@@ -35,26 +41,40 @@ export const fetchSongs = (playlist, url) => async (dispatch) => {
     dispatch(fetchSongsSuccess(playlist, result, entities, nextUrl, futureUrl))
 }
 
-export const fetchSongsIfNeeded = (playlist, playlistUrl) => (dispatch, getState) => {
+export const fetchSongsIfNeeded = (playlist, playlistUrl) => (
+    dispatch,
+    getState
+) => {
     const state = getState()
     const playlists = getPlaylists(state)
     const playlistExists = playlist in playlists
-    const playlistIsFetching = playlistExists ? playlists[playlist].isFetching : false
-    const playlistHasItems = playlistExists ? Boolean(playlists[playlist].items.length) : false
+    const playlistIsFetching = playlistExists
+        ? playlists[playlist].isFetching
+        : false
+    const playlistHasItems = playlistExists
+        ? Boolean(playlists[playlist].items.length)
+        : false
     const shouldFetchSongs =
-        playlistUrl && (!playlistExists || (!playlistHasItems && !playlistIsFetching))
+        playlistUrl &&
+        (!playlistExists || (!playlistHasItems && !playlistIsFetching))
 
     if (shouldFetchSongs) {
         dispatch(fetchSongs(playlist, playlistUrl))
     }
 }
 
-export const fetchSongsNext = (playlist, playlistNextUrl) => (dispatch, getState) => {
+export const fetchSongsNext = (playlist, playlistNextUrl) => (
+    dispatch,
+    getState
+) => {
     const state = getState()
     const playlists = getPlaylists(state)
     const playlistExists = playlist in playlists
-    const playlistIsFetching = playlistExists ? playlists[playlist].isFetching : false
-    const shouldFetchSongsNext = playlistExists && !playlistIsFetching && playlistNextUrl
+    const playlistIsFetching = playlistExists
+        ? playlists[playlist].isFetching
+        : false
+    const shouldFetchSongsNext =
+        playlistExists && !playlistIsFetching && playlistNextUrl
 
     if (shouldFetchSongsNext) {
         dispatch(fetchSongs(playlist, playlistNextUrl))

@@ -30,7 +30,9 @@ const scrollState = (height, count, isMobile) => {
     const shouldPadTop = scrollY > THREE_ROWS_HEIGHT
 
     if (shouldPadTop) {
-        const rowsToPad = Math.floor((scrollY - TWO_ROWS_HEIGHT) / rowWithMarginHeight)
+        const rowsToPad = Math.floor(
+            (scrollY - TWO_ROWS_HEIGHT) / rowWithMarginHeight
+        )
         paddingTop = rowsToPad * rowWithMarginHeight
         start = rowsToPad * ITEMS_PER_ROW
     }

@@ -28,7 +28,10 @@ class InfiniteScroll extends Component {
     }
 
     onScroll() {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+        if (
+            window.innerHeight + window.scrollY >=
+            document.body.offsetHeight - 200
+        ) {
             const { args, onScroll } = this.props
             onScroll(...args)
         }

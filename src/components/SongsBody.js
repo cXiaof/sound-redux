@@ -29,7 +29,11 @@ class SongBody extends Component {
         super(props)
         this.onScroll = this.onScroll.bind(this)
 
-        this.state = scrollState(props.height, props.songs.length, props.isMobile)
+        this.state = scrollState(
+            props.height,
+            props.songs.length,
+            props.isMobile
+        )
     }
 
     componentDidMount() {
@@ -38,8 +42,17 @@ class SongBody extends Component {
 
     componentWillReceiveProps(nextProps) {
         const { height, songs } = this.props
-        if (height !== nextProps.height || songs.length !== nextProps.songs.length) {
-            this.setState(scrollState(nextProps.height, nextProps.songs.length, nextProps.isMobile))
+        if (
+            height !== nextProps.height ||
+            songs.length !== nextProps.songs.length
+        ) {
+            this.setState(
+                scrollState(
+                    nextProps.height,
+                    nextProps.songs.length,
+                    nextProps.isMobile
+                )
+            )
         }
     }
 
@@ -71,7 +84,10 @@ class SongBody extends Component {
 
         return (
             <div className='songs-body'>
-                <div className='songs-body__padder' style={{ height: `${paddingTop}px` }} />
+                <div
+                    className='songs-body__padder'
+                    style={{ height: `${paddingTop}px` }}
+                />
                 <SongsBodyRendered
                     end={end}
                     isAuthenticated={isAuthenticated}
@@ -87,7 +103,10 @@ class SongBody extends Component {
                     start={start}
                     toggleLike={toggleLike}
                 />
-                <div className='songs-body__padder' style={{ height: `${paddingBottom}px` }} />
+                <div
+                    className='songs-body__padder'
+                    style={{ height: `${paddingBottom}px` }}
+                />
                 <Loader className='loader--full' isLoading={isFetching} />
             </div>
         )

@@ -33,10 +33,17 @@ const History = ({
 
     return (
         <div className='history'>
-            <div className='history__bg' onClick={toggleShowHistory} role='button' tabIndex='0' />
+            <div
+                className='history__bg'
+                onClick={toggleShowHistory}
+                role='button'
+                tabIndex='0'
+            />
             <div className='history__main'>
                 <div className='history__header'>
-                    <div className='history__header__title'>Recently Played</div>
+                    <div className='history__header__title'>
+                        Recently Played
+                    </div>
                     <div
                         className='history__header__button'
                         onClick={toggleShowHistory}

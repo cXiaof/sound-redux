@@ -39,7 +39,9 @@ class Popover extends Component {
                     {children[0]}
                 </span>
                 {isOpen ? (
-                    <PopoverPanel toggleIsOpen={this.toggleIsOpen}>{children[1]}</PopoverPanel>
+                    <PopoverPanel toggleIsOpen={this.toggleIsOpen}>
+                        {children[1]}
+                    </PopoverPanel>
                 ) : null}
             </div>
         )

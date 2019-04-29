@@ -44,7 +44,11 @@ class User extends Component {
     componentWillReceiveProps(nextProps) {
         const { fetchUserIfNeeded, id } = this.props
         if (nextProps.id !== id) {
-            fetchUserIfNeeded(nextProps.shouldFetchUser, nextProps.id, nextProps.playlist)
+            fetchUserIfNeeded(
+                nextProps.shouldFetchUser,
+                nextProps.id,
+                nextProps.playlist
+            )
         }
     }
 

@@ -13,7 +13,8 @@ import {
 
 export const getNavPlaylists = createSelector(
     getEntities,
-    (entities) => denormalize(Object.keys(entities.playlists), [playlistSchema], entities)
+    (entities) =>
+        denormalize(Object.keys(entities.playlists), [playlistSchema], entities)
 )
 
 export const getNavPlaylist = createSelector(
@@ -21,14 +22,19 @@ export const getNavPlaylist = createSelector(
     getId,
     getEntities,
     (path, id, entities) =>
-        path === PLAYLIST_PATH && id ? denormalize(id, playlistSchema, entities) : null
+        path === PLAYLIST_PATH && id
+            ? denormalize(id, playlistSchema, entities)
+            : null
 )
 
 export const getStreamFutureUrl = createSelector(
     getOauthToken,
     getPlaylists,
     (oauthToken, playlists) =>
-        SESSION_STREAM_PLAYLIST in playlists && playlists[SESSION_STREAM_PLAYLIST].futureUrl
-            ? `${playlists[SESSION_STREAM_PLAYLIST].futureUrl}&oauth_token=${oauthToken}`
+        SESSION_STREAM_PLAYLIST in playlists &&
+        playlists[SESSION_STREAM_PLAYLIST].futureUrl
+            ? `${
+                  playlists[SESSION_STREAM_PLAYLIST].futureUrl
+              }&oauth_token=${oauthToken}`
             : ''
 )

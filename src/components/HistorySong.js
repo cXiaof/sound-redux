@@ -17,15 +17,30 @@ const propTypes = {
 
 class HistorySong extends Component {
     render() {
-        const { index, isActive, isPlaying, navigateTo, playlist, playSong, song } = this.props
+        const {
+            index,
+            isActive,
+            isPlaying,
+            navigateTo,
+            playlist,
+            playSong,
+            song
+        } = this.props
         const { artworkUrl, id, title, user } = song
         const { username } = user
 
         return (
-            <div className='history__song' onClick={this.onClick} role='button' tabIndex='0'>
+            <div
+                className='history__song'
+                onClick={this.onClick}
+                role='button'
+                tabIndex='0'
+            >
                 <div
                     className='history__song__artwork'
-                    style={{ backgroundImage: `url(${getImageUrl(artworkUrl)})` }}
+                    style={{
+                        backgroundImage: `url(${getImageUrl(artworkUrl)})`
+                    }}
                 >
                     <ArtworkPlay
                         index={index}

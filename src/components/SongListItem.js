@@ -36,16 +36,31 @@ const SongListItem = ({
     toggleLike
 }) => {
     const { isPlaying } = player
-    const { artworkUrl, commentCount, favoritingsCount, id, playbackCount, title, user } = song
+    const {
+        artworkUrl,
+        commentCount,
+        favoritingsCount,
+        id,
+        playbackCount,
+        title,
+        user
+    } = song
     const { avatarUrl, username } = user
 
     return (
-        <div className={`song-list__item ${isActive ? 'song-list__item--active' : ''}`}>
+        <div
+            className={`song-list__item ${
+                isActive ? 'song-list__item--active' : ''
+            }`}
+        >
             <div className='song-list__item__artwork'>
                 <div
                     className='song-list__item__artwork__image'
                     style={{
-                        backgroundImage: `url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`
+                        backgroundImage: `url(${getImageUrl(
+                            artworkUrl,
+                            IMAGE_SIZES.LARGE
+                        )})`
                     }}
                 >
                     <ArtworkPlay
@@ -70,7 +85,11 @@ const SongListItem = ({
                     <div className='song-list__item__user'>
                         <div
                             className='song-list__item__user__avatar'
-                            style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
+                            style={{
+                                backgroundImage: `url(${getImageUrl(
+                                    avatarUrl
+                                )})`
+                            }}
                         />
                         <Link
                             className='song-list__item__user__username'

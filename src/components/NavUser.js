@@ -24,7 +24,9 @@ const NavUser = ({ isAuthenticated, login, logout, user }) => {
                 <div className='nav-user__trigger'>
                     <div
                         className='nav-user__avatar'
-                        style={{ backgroundImage: `url(${getImageUrl(avatarUrl)})` }}
+                        style={{
+                            backgroundImage: `url(${getImageUrl(avatarUrl)})`
+                        }}
                     />
                     <i className='nav-user__chevron ion-chevron-down' />
                 </div>

@@ -19,20 +19,25 @@ export const getSongs = createSelector(
     getPlaylists,
     getEntities,
     (playlist, playlists, entities) =>
-        playlist in playlists ? denormalize(playlists[playlist].items, [songSchema], entities) : []
+        playlist in playlists
+            ? denormalize(playlists[playlist].items, [songSchema], entities)
+            : []
 )
 
 export const getUser = createSelector(
     getId,
     getEntities,
-    (id, entities) => (id in entities.users ? denormalize(id, userSchema, entities) : null)
+    (id, entities) =>
+        id in entities.users ? denormalize(id, userSchema, entities) : null
 )
 
 export const getFollowings = createSelector(
     getUser,
     getEntities,
     (user, entities) =>
-        user && user.followings ? denormalize(user.followings, [userSchema], entities) : []
+        user && user.followings
+            ? denormalize(user.followings, [userSchema], entities)
+            : []
 )
 
 export const getIsFollowing = createSelector(

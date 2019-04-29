@@ -13,7 +13,8 @@ import {
 export const getSong = createSelector(
     getEntities,
     getId,
-    (entities, id) => (id in entities.songs ? denormalize(id, songSchema, entities) : null)
+    (entities, id) =>
+        id in entities.songs ? denormalize(id, songSchema, entities) : null
 )
 
 export const getIsActive = createSelector(
@@ -38,11 +39,16 @@ export const getSongs = createSelector(
     getEntities,
     (playlist, playlists, entities) =>
         playlist in playlists
-            ? denormalize(playlists[playlist].items.slice(1), [songSchema], entities)
+            ? denormalize(
+                  playlists[playlist].items.slice(1),
+                  [songSchema],
+                  entities
+              )
             : []
 )
 
-export const getTimed = (state) => Boolean(state.router.route.options.timed) || false
+export const getTimed = (state) =>
+    Boolean(state.router.route.options.timed) || false
 
 export const getComments = createSelector(
     getIsActive,
@@ -54,7 +60,8 @@ export const getComments = createSelector(
             const start = currentTime - (currentTime % 10)
             const end = start + 10
             return comments.filter(
-                ({ unixTimestamp }) => unixTimestamp >= start && unixTimestamp < end
+                ({ unixTimestamp }) =>
+                    unixTimestamp >= start && unixTimestamp < end
             )
         }
 

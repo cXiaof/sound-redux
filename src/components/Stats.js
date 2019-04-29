@@ -42,7 +42,9 @@ const Stats = ({
         />
         <div className='stats__stat'>
             <i className='stats__stat__icon ion-play' />
-            <span className='stats__stat__text'>{addCommas(playbackCount)}</span>
+            <span className='stats__stat__text'>
+                {addCommas(playbackCount)}
+            </span>
         </div>
         <div className='stats__stat'>
             <i className='stats__stat__icon ion-chatbubble' />

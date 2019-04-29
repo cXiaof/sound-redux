@@ -24,7 +24,9 @@ class NavSearch extends Component {
 
     onKeyDown(e) {
         if (e.keyCode === 191) {
-            const insideInput = e.target.tagName.toLowerCase().match(/input|textarea/)
+            const insideInput = e.target.tagName
+                .toLowerCase()
+                .match(/input|textarea/)
             if (!insideInput) {
                 e.preventDefault()
                 this.input.focus()

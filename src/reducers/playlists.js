@@ -45,7 +45,10 @@ function playlist(state = initialState, action) {
             if (action.playlist !== HISTORY_PLAYLIST) {
                 return {
                     ...state,
-                    items: [action.id, ...state.items.filter((id) => id !== action.id)]
+                    items: [
+                        action.id,
+                        ...state.items.filter((id) => id !== action.id)
+                    ]
                 }
             }
 
@@ -63,7 +66,10 @@ export default function playlists(state = {}, action) {
         case 'LOAD_NEW_STREAM_SONGS':
             return {
                 ...state,
-                [SESSION_STREAM_PLAYLIST]: playlist(state[SESSION_STREAM_PLAYLIST], action)
+                [SESSION_STREAM_PLAYLIST]: playlist(
+                    state[SESSION_STREAM_PLAYLIST],
+                    action
+                )
             }
 
         case 'FETCH_SONGS_REQUEST':
@@ -86,7 +92,10 @@ export default function playlists(state = {}, action) {
             return Object.keys(state)
                 .filter((key) => {
                     const type = key.split('|')[0]
-                    return type !== SESSION_PLAYLIST_TYPE && type !== PLAYLIST_PLAYLIST_TYPE
+                    return (
+                        type !== SESSION_PLAYLIST_TYPE &&
+                        type !== PLAYLIST_PLAYLIST_TYPE
+                    )
                 })
                 .reduce(
                     (obj, key) => ({

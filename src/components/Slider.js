@@ -35,7 +35,9 @@ class Slider extends Component {
 
     onClick(e) {
         const { max, onChange } = this.props
-        const percent = (e.clientX - offsetLeft(e.currentTarget)) / e.currentTarget.offsetWidth
+        const percent =
+            (e.clientX - offsetLeft(e.currentTarget)) /
+            e.currentTarget.offsetWidth
         onChange(percent * max)
     }
 

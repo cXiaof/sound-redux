@@ -19,7 +19,11 @@ import { navigateTo } from '../actions/RouterActions'
 import toggleShowHistory from '../actions/HistoryActions'
 import Player from '../components/Player'
 import { getPlayingSongId, getPlaylists } from '../selectors/CommonSelectors'
-import { getAudioUrl, getNextIndex, getSong } from '../selectors/PlayerSelectors'
+import {
+    getAudioUrl,
+    getNextIndex,
+    getSong
+} from '../selectors/PlayerSelectors'
 import { getShowHistory } from '../selectors/HistorySelectors'
 
 const defaultProps = {

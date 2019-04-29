@@ -21,7 +21,14 @@ const WaveformEvents = ({ isActive, onMouseMove, playSong, seek }) => {
         )
     }
 
-    return <div className='waveform__events' onMouseDown={playSong} role='button' tabIndex='0' />
+    return (
+        <div
+            className='waveform__events'
+            onMouseDown={playSong}
+            role='button'
+            tabIndex='0'
+        />
+    )
 }
 
 WaveformEvents.propTypes = propTypes

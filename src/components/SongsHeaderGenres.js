@@ -45,7 +45,9 @@ class SongsHeaderGenres extends Component {
                     {genres.map((g) => (
                         <div
                             className={`songs-header__genre ${
-                                g.key === genre ? 'songs-header__genre--active' : ''
+                                g.key === genre
+                                    ? 'songs-header__genre--active'
+                                    : ''
                             }`}
                             key={g.key}
                         >

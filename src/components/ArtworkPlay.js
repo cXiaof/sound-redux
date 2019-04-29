@@ -36,7 +36,9 @@ class ArtworkPlay extends Component {
         const { isActive, isPlaying } = this.props
         return (
             <div
-                className={`artwork-play ${isActive ? 'artwork-play--active' : ''}`}
+                className={`artwork-play ${
+                    isActive ? 'artwork-play--active' : ''
+                }`}
                 role='button'
                 tabIndex='0'
                 onClick={isActive ? this.togglePlay : this.playSong}

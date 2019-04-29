@@ -1,6 +1,10 @@
 import { normalize } from 'normalizr'
 import { fetchSongs, fetchSongsSuccess } from '../actions/PlaylistActions'
-import { SONG_URL, SONG_COMMENTS_URL, USER_SONGS_URL } from '../constants/ApiConstants'
+import {
+    SONG_URL,
+    SONG_COMMENTS_URL,
+    USER_SONGS_URL
+} from '../constants/ApiConstants'
 import { songSchema } from '../constants/Schemas'
 import { callApi } from '../utils/ApiUtils'
 

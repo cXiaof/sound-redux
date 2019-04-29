@@ -29,7 +29,10 @@ class Waveform extends Component {
     }
 
     onMouseMove(e) {
-        const seek = ((e.clientX - offsetLeft(e.currentTarget)) / e.currentTarget.offsetWidth) * 100
+        const seek =
+            ((e.clientX - offsetLeft(e.currentTarget)) /
+                e.currentTarget.offsetWidth) *
+            100
         this.setState({ seek })
     }
 
@@ -55,18 +58,28 @@ class Waveform extends Component {
         const width = isActive ? (currentTime / (duration / 1000)) * 100 : 0
 
         return (
-            <div className={`waveform ${isActive ? 'waveform--active' : ''} ${className}`}>
+            <div
+                className={`waveform ${
+                    isActive ? 'waveform--active' : ''
+                } ${className}`}
+            >
                 <div
                     className='waveform__image'
                     style={{ backgroundImage: `url(${waveformUrl})` }}
                 />
                 <div className='waveform__bg' style={{ width: `${width}%` }} />
-                <div className='waveform__seek-bg' style={{ width: `${seek}%` }} />
+                <div
+                    className='waveform__seek-bg'
+                    style={{ width: `${seek}%` }}
+                />
                 <div className='waveform__hover-icon'>
                     <i className='ion-ios-play' />
                 </div>
                 <div className='waveform__hover-bg' />
-                <div className='waveform__seek-line' style={{ width: `${seek}%` }} />
+                <div
+                    className='waveform__seek-line'
+                    style={{ width: `${seek}%` }}
+                />
                 <WaveformEvents
                     isActive={isActive}
                     onMouseMove={this.onMouseMove}

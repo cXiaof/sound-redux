@@ -1,5 +1,13 @@
-import { getPlaylist, getRepeat, getShuffle } from '../selectors/CommonSelectors'
-import { getNextIndex, getPrevIndex, getShuffleIndex } from '../selectors/PlayerSelectors'
+import {
+    getPlaylist,
+    getRepeat,
+    getShuffle
+} from '../selectors/CommonSelectors'
+import {
+    getNextIndex,
+    getPrevIndex,
+    getShuffleIndex
+} from '../selectors/PlayerSelectors'
 
 export const onLoadedMetadata = (duration) => ({
     type: 'ON_LOADED_METADATA',
@@ -45,7 +53,10 @@ export const playPrevSong = () => (dispatch, getState) => {
     }
 }
 
-export const playNextSong = (fromButtonPress = false) => (dispatch, getState) => {
+export const playNextSong = (fromButtonPress = false) => (
+    dispatch,
+    getState
+) => {
     const state = getState()
     const nextIndex = getNextIndex(state)
     const playlist = getPlaylist(state)
@@ -60,7 +71,8 @@ export const playNextSong = (fromButtonPress = false) => (dispatch, getState) =>
     }
 }
 
-export const playNextSongFromButton = () => (dispatch) => dispatch(playNextSong(true))
+export const playNextSongFromButton = () => (dispatch) =>
+    dispatch(playNextSong(true))
 
 export const toggleRepeat = () => ({ type: 'TOGGLE_REPEAT' })
 

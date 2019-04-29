@@ -14,7 +14,14 @@ const propTypes = {
     timed: PropTypes.bool.isRequired
 }
 
-const SongComments = ({ comments, id, navigateTo, sidebarHeight, sticky, timed }) => (
+const SongComments = ({
+    comments,
+    id,
+    navigateTo,
+    sidebarHeight,
+    sticky,
+    timed
+}) => (
     <div
         className={`sidebar ${sticky ? 'sidebar--sticky' : ''}`}
         style={{ height: `${sidebarHeight}px` }}

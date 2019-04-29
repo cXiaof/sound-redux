@@ -105,7 +105,11 @@ const Player = ({
                     </div>
                 </div>
                 <div className='player__section player__section--seek'>
-                    <Slider max={duration} onChange={changeCurrentTime} value={currentTime} />
+                    <Slider
+                        max={duration}
+                        onChange={changeCurrentTime}
+                        value={currentTime}
+                    />
                 </div>
                 <div className='player__section player__section--time'>
                     <div className='player__time'>
@@ -117,7 +121,9 @@ const Player = ({
                 <div className='player__section player__section--options'>
                     <div className='player__buttons player__buttons--options'>
                         <div
-                            className={`player__button ${repeat ? 'player__button--active' : ''}`}
+                            className={`player__button ${
+                                repeat ? 'player__button--active' : ''
+                            }`}
                             onClick={toggleRepeat}
                             role='button'
                             tabIndex='0'
@@ -125,7 +131,9 @@ const Player = ({
                             <i className='player__button__icon ion-loop' />
                         </div>
                         <div
-                            className={`player__button ${shuffle ? 'player__button--active' : ''}`}
+                            className={`player__button ${
+                                shuffle ? 'player__button--active' : ''
+                            }`}
                             onClick={toggleShuffle}
                             role='button'
                             tabIndex='0'
